@@ -4,11 +4,57 @@ header{
     display: flex;
     width: 100%;
     height: 127px;
-    background-color: black;
+    background-color: white;
 
+}
+header  a{
+    text-decoration: none;
+    color: black;
 }
 #logo > img{
     width: 261px;
     height: 127px;
     
+}
+.searchContainer{
+    display: flex;
+}
+#search-icon{
+    width: 50px;
+    height: 50px;
+    margin-top: 6%;
+}
+#search-box{
+    width: 600px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgb(192, 192, 192);
+    margin-left: 30%;
+    margin-top: 5%;
+    background-color: rgba(214, 212, 212, 0.384);
+}
+#account{
+    width: 300px;
+    height: 50px;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+#cart{
+    width: 300px;
+    height: 50px;
+    margin-top: 3%;
+}
+nav{
+    padding-top: 13px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.301);
+    height: 30px;
+
+}
+nav > a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
 }
