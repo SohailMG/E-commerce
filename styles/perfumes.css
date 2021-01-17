@@ -1,0 +1,35 @@
+.gridwrapper{
+
+    color: white;
+    display: grid;
+    
+    grid-gap: 1em;
+    margin-top: 10%;
+    margin-left: 3%;
+    grid-template-columns: repeat(4,1fr);
+}
+.gridwrapper > div{
+    background:rgb(128, 128, 128);
+    padding: 1em;
+    width: 250px;
+    height: 250px;
+
+}
+.gridwrapper > div:hover{
+    opacity: 50%;
+}
+.gridwrapper #addbtn{
+    width: 250px;
+    height: 40px;
+    background-color:rgb(1, 105, 97);
+    color: white;
+    border: none;
+}
+.gridwrapper #addbtn:hover{
+    color: white;
+    background-color: black;
+}
+#item-picture{
+    width: 250px;
+    height: 185px;
+}
