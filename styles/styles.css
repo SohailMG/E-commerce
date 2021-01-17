@@ -27,12 +27,12 @@ header  a{
 #search-box{
     width: 600px;
     height: 35px;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 10px 10px rgb(192, 192, 192);
+    border-top: none;
+    border-left: none;
+    border-right: none;
     margin-left: 30%;
     margin-top: 5%;
-    background-color: rgba(214, 212, 212, 0.384);
+    background-color: white;
 }
 #account{
     width: 300px;
@@ -54,7 +54,39 @@ nav{
 }
 nav > a{
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 20px;
     margin-top: 30px;
+}
+.selected{
+    color:red;
+    border-radius: 10px;
+
+}
+main{
+    display: flex;
+
+}
+#right-section{
+    text-align: center;
+    width: 500px;
+    height: 500px;
+}
+#right-section > p{
+    font-size: 40px;
+    color: black;
+    margin-top: 50%;
+}
+#right-section > button{
+    color: black;
+    background-color:rgb(170, 170, 170);
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgb(133, 133, 133);
+}
+#right-section > button:hover{
+    background-color: black;
+    color: white;
 }
