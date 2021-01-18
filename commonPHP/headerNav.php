@@ -8,6 +8,7 @@ function outputHTMLtags(){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
         <link rel="stylesheet" href="styles/perfumes.css">
+        <link rel="stylesheet" href="styles/CMS.css">
         <title>PerfumeFest</title>
     </head>  
     <body>';
@@ -39,6 +40,7 @@ function outputHeaderNav($pageName){
         }
         echo 'href="' . $pageLinks[$i] . '">' . $pageNames[$i] . '</a>';  
     }
+    echo '</nav>';
 
 }
 
@@ -51,6 +53,7 @@ function outputFooter(){
 
 
 </body>
+<script src="src/visuals.js"></script>
 
 </html>';
 }

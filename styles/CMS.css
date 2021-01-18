@@ -1,0 +1,64 @@
+.cms-login{
+    margin-top: 10%;
+    margin-left: 40%;
+    width: 250px;
+}
+.cms-login > input{
+    margin-top: 10px;
+    background-color: rgba(128, 128, 128, 0.493);
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+}
+.cms-login > button{
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin-left: 67px;
+    margin-top: 31px;
+
+}
+.cms-login > button:hover{
+    background-color: black;
+    color: white;
+
+}
+.cms-wrapper{
+    display: none ;
+}
+.cms-container{
+    display: flex;
+}
+.side-menu{
+    text-align: center;
+    width: 200px;
+    height: 300px;
+    background-color: grey;
+}
+.side-menu > div{
+    padding-top: 10px;
+    background-color: rgb(1, 41, 44);
+    color: blanchedalmond;
+    height: 30px;
+}
+.side-menu > button:not(:first-child){
+    width: 200px;
+    height: 50px;
+    color: white;
+    border: none;
+    background-color: grey;
+}
+.side-menu > button:not(:first-child):hover{
+    background-color: rgb(1, 41, 44);
+
+}
+.task-container{
+    width: 100%;
+    height: 300px;
+    background-color:rgb(1, 41, 44);
+}
