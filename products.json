@@ -1,0 +1,199 @@
+
+ db.Products.insert( [
+    {
+        Name: "Boss",
+        Price: "40.99",
+        Quantity: "10",
+        size: "50ml",
+        KeyWords: [
+            "Boss",
+            "mens",
+            "expensive",
+            "blue",
+            "50ml"
+        ]
+    },
+    {
+        Name: "Doir",
+        Price: "60.99",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Doir",
+            "mens",
+            "white",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Diesel",
+        Price: "49.50",
+        Quantity: "10",
+        size: "50ml",
+        KeyWords: [
+            "Diesel",
+            "mens",
+            "fist",
+            "50ml"
+        ]
+    },
+    {
+        Name: "1 Million",
+        Price: "70.50",
+        Quantity: "10",
+        size: "50ml",
+        KeyWords: [
+            "one million",
+            "mens",
+            "paco",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Lacoste",
+        Price: "50.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "lacoste",
+            "green",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Chanel",
+        Price: "100.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Chanle",
+            "blue",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Gucci",
+        Price: "50.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Gucci",
+            "guilty",
+            "black",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Armani",
+        Price: "80.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Armani",
+            "Code",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Calvin Klein",
+        Price: "30.00",
+        Quantity: "10",
+        size: "50ml",
+        KeyWords: [
+            "CK",
+            "IN2U",
+            "mens",
+            "50ml"
+        ]
+    },
+    {
+        Name: "Tom Ford",
+        Price: "70.00",
+        Quantity: "10",
+        size: "50ml",
+        KeyWords: [
+            "Tom",
+            "Ford",
+            "Black",
+            "mens",
+            "50ml"
+        ]
+    },
+    {
+        Name: "Creed",
+        Price: "120.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Creed",
+            "Aventus",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Joop",
+        Price: "45.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Joop",
+            "Wow",
+            "Woody",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Montblanc",
+        Price: "33.50",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "explorer",
+            "black",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Tommy Helfiger",
+        Price: "60.00",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Tommy",
+            "white",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Dolce & Gabbana",
+        Price: "55.50",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "D&C",
+            "K",
+            "mens",
+            "100ml"
+        ]
+    },
+    {
+        Name: "Versace",
+        Price: "65.50",
+        Quantity: "10",
+        size: "100ml",
+        KeyWords: [
+            "Dreamer",
+            "gold",
+            "mens",
+            "100ml"
+        ]
+    }
+]);
