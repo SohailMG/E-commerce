@@ -93,4 +93,48 @@ section{
 main{
 height: 800px;
 }
+footer{
+    height: 200px;
+    background-color: rgb(228, 228, 228);
+
+}
+.footer-grid{
+    display: grid;
+    grid-gap: 1em;
+    margin-left: 10%;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+.footer-grid > div{
+    text-align: center;
+    margin-top: 10%;
+    width: 300px;
+    height: 150px;
+    color: black;
+
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid black;
+}
+#about > p{
+    color: cadetblue;
+    text-align: center;
+
+}
+#quick-links > a{
+    display: block;
+    text-decoration: none;
+    color: cadetblue;
+    margin-top: 10px;
+
+}
+#socials > a{
+    display: block;
+    text-decoration: none;
+    color: cadetblue;
+    margin-top: 10px;
+
+}
+
 

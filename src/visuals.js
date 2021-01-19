@@ -5,6 +5,7 @@ let addProductForm = document.getElementById("add-form");
 let add_btn = document.getElementById("add-btn");
 
 let URL = window.location.href;
+
 /**
  * removes login form and displays cms page
  */
@@ -25,7 +26,7 @@ if (URL.match("CMS")) {
   let signInform = document.getElementById("sign-in");
   let formtitle = document.getElementById("formtitle");
 
-  // switching between sign in and sign up forms
+  // switching to sign in form and hiding sign up form
   switch_signIn.onclick = () => {
     if (signInform.style.display != "block") {
       signInform.style.display = "block";
@@ -38,6 +39,7 @@ if (URL.match("CMS")) {
       switch_signUp.style.color = "white";
     }
   };
+  // switching to sign up form and hiding sign in form
   switch_signUp.onclick = () => {
     signInform.style.display = "none";
     signUpform.style.display = "block";

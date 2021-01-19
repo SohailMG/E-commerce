@@ -4,7 +4,7 @@ outputHTMLtags();
 outputHeaderNav("Perfumes");
 ?>
 
-<main>
+<div class="products-wrapper">
     <div class="gridwrapper">
         <div class="item-one">
             <div id="item-picture"></div>
@@ -103,8 +103,8 @@ outputHeaderNav("Perfumes");
             <button id="addbtn">Add to Cart</button>
         </div>
     </div>
+</div>
 
-</main>
 
 
 

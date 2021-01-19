@@ -48,7 +48,27 @@ function outputHeaderNav($pageName){
 
 function outputFooter(){
     echo '
-<footer></footer>
+    <footer>
+    <div class="footer-grid">
+
+        <div id="about">About
+            <p>Making of a fine scent is like making of fine precious stone gems. A sharp gem specialist will have an eye for the ideal precious stone.</p>
+        </div>
+
+        <div id="quick-links">Quick Links
+            <a href="index.php">Home</a>
+            <a href="perfumes.php">Perfumes</a>
+            <a href="CMS.php">CMS</a>
+        </div>
+        <div id="socials">Socials
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+
+        </div>
+
+    </div>
+</footer>
 
 
 
@@ -58,4 +78,3 @@ function outputFooter(){
 
 </html>';
 }
-?>
