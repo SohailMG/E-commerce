@@ -13,18 +13,31 @@ outputHeaderNav("CMS");
     </div>
 
     <div class="cms-wrapper">
-    <div class="cms-container">
-        <div class="side-menu">
-            <div id="">Menu</div>
-            <button id="add-btn">Add Product</button>
-            <button id="remove-btn">Remove Product</button>
-            <button id="update-product">Update Product</button>
-            <button id="update-customer">Update Customer Details</dbuttoniv>
+        <div class="cms-container">
+            <div class="side-menu">
+                <div id="">Menu</div>
+                <button id="add-btn">Add Product</button>
+                <button id="remove-btn">Remove Product</button>
+                <button id="update-product">Update Product</button>
+                <button id="update-customer">Update Customer Details</dbuttoniv>
+            </div>
+            <div class="task-container">
+                <div id="add-form">
+                    <h1>Product Details</h1>
+                    Name: <input type="text">
+                    Price: <input type="text">
+                    Quantity: <input type="text">
+                    Size: <input type="text">
+                    <button id="addProduct">Add</button>
+                </div>
+                <div id="remove-form">
+
+                </div>
+                <div id="update-form"></div>
+            </div>
+
+
         </div>
-        <div class="task-container"></div>
-
-
-    </div>
     </div>
 </main>
 

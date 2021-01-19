@@ -9,6 +9,7 @@ function outputHTMLtags(){
         <link rel="stylesheet" href="styles/common.css">
         <link rel="stylesheet" href="styles/perfumes.css">
         <link rel="stylesheet" href="styles/CMS.css">
+        <link rel="stylesheet" href="styles/register.css">
         <title>PerfumeFest</title>
     </head>  
     <body>';
@@ -23,9 +24,9 @@ function outputHeaderNav($pageName){
         <div class="searchContainer">
             <input type="text" placeholder="Search..." id="search-box">
 
-            <div id="search-icon"><a href="#"><img src="Images/search.png" alt=""></a></div>
+            <div id="search-icon"><a href="search.php"><img src="Images/search.png" alt=""></a></div>
         </div>
-        <div id="account"><img src="Images/Account.png" alt=""><a href="#">Account</a></div>
+        <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>
         <div id="cart"><img src="Images/Cart.png" alt=""><a href="#">Cart</a></div>
     </header>
     <nav>';

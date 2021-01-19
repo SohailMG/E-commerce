@@ -1,0 +1,80 @@
+#register-form{
+    position: absolute;
+    margin-left: 16%;
+    margin-top: 5%;
+    width: 500px;
+    height: 489px;
+    background-color: rgb(216, 228, 240);
+    box-shadow: 0 10px 10px grey;
+}
+#sign-up{
+    display: none;
+    width: 190px;
+    margin-left: 10px;
+}
+#sign-in{
+    width: 190px;
+    margin-left: 10px;
+}
+#sign-up > input{
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    border: none;
+
+}
+#sign-in > input{
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    border: none;
+
+}
+#register-form > h1{
+    text-align: center;
+    color: white;
+    text-shadow: 0 10px 10px black;
+}
+#sign-in > button{
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin-left: 67px;
+    margin-top: 31px;
+}
+#sign-up > button{
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin-left: 67px;
+    margin-top: 31px;
+}
+#switch-btns{
+    display: flex;
+    margin-left: 30%;
+
+}
+#switch-btns > button{
+    width: 90px;
+    height: 30px;
+    border: none;
+    background-color: teal;
+    color: white;
+}
+#switch-btns > button:hover{
+    background-color: white;
+    color: black;
+}
+#formBg > img{
+    position: absolute;
+    left: 26%;
+    margin-top: 5%;
+}

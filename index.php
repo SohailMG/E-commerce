@@ -9,7 +9,7 @@ outputHeaderNav("Home");
         <div id="left-section"><img src="Images/mainsection.jpg" alt=""></div>
         <div id="right-section">
             <p>Explore different scenets</p>
-            <button>Shop Now</button>
+            <button id="shopnow">Shop Now</button>
         </div>
     </section>
 
