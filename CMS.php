@@ -30,6 +30,27 @@ outputHeaderNav("CMS");
                     Size: <input type="text">
                     <button id="addProduct">Add</button>
                 </div>
+                <table id="table">
+                    <caption>Products Database</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Size</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <div id="remove-form">
 
                 </div>

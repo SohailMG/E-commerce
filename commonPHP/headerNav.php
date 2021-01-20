@@ -10,6 +10,7 @@ function outputHTMLtags(){
         <link rel="stylesheet" href="styles/perfumes.css">
         <link rel="stylesheet" href="styles/CMS.css">
         <link rel="stylesheet" href="styles/register.css">
+        <link rel="stylesheet" href="styles/cart.css">
         <title>PerfumeFest</title>
     </head>  
     <body>';
@@ -27,12 +28,12 @@ function outputHeaderNav($pageName){
             <div id="search-icon"><a href="search.php"><img src="Images/search.png" alt=""></a></div>
         </div>
         <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>
-        <div id="cart"><img src="Images/Cart.png" alt=""><a href="#">Cart</a></div>
+        <div id="cart"><img src="Images/Cart.png" alt=""><a href="cart.php">Cart</a></div>
     </header>
     <nav>';
 
-    $pageNames = array("Home","Perfumes","CMS");
-    $pageLinks = array("index.php","perfumes.php","CMS.php");
+    $pageNames = array("Home","Perfumes");
+    $pageLinks = array("index.php","perfumes.php");
 
     for ($i = 0; $i < count($pageNames); $i++) {
         echo '<a ';
@@ -58,7 +59,8 @@ function outputFooter(){
         <div id="quick-links">Quick Links
             <a href="index.php">Home</a>
             <a href="perfumes.php">Perfumes</a>
-            <a href="CMS.php">CMS</a>
+            <a href="Register.php">Account</a>
+            <a href="cart.php">Cart</a>
         </div>
         <div id="socials">Socials
             <a href="#">Facebook</a>

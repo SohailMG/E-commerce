@@ -78,3 +78,51 @@
     left: 26%;
     margin-top: 5%;
 }
+#account-page{
+    display: none;
+    position: absolute;
+    margin-left: 16%;
+    margin-top: 5%;
+    width: 500px;
+    height: 489px;
+    background-color: rgb(216, 228, 240);
+    box-shadow: 0 10px 10px grey;
+}
+#account-container {
+    width: 175px;
+    margin-left: 10px;
+    
+}
+#account-container > button {
+    width: 90px;
+    height: 30px;
+    border: none;
+    background-color: teal;
+    color: white;
+    margin-top: 10px;
+    
+    
+}
+#account-container > button:hover {
+    background-color: white;
+    color: black;
+    
+    
+}
+#account-container > input {
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    border: none;
+
+}
+#account-container > h1 {
+    width: 480px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid black;
+   
+
+}
+

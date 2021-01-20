@@ -197,3 +197,43 @@
         ]
     }
 ]);
+
+
+{
+    "_id":{"$oid":"60081815d0543ada24e0c1d0"},
+    "first_name":"John",
+    "last_name":"Wick",
+    "email":"johnW@gmail.com",
+    "password":"pass1223",
+    "number":"07458963452",
+    "address":
+       {"street":"12 Main St",
+        "city":"London",
+        "postcode":"SW12"}
+}
+
+
+
+products{
+    {
+    id:"012k0ekw0dk0k9k29e",
+    name:"bmw",
+    year:"2000"
+    price:"12.00"
+    }
+    ,
+    {
+    id:"012k0ekw0dk0k9k29e",
+    name:"meirfjciem",
+    year:"2000"
+    price:"12.00"
+    }
+
+
+}
+customers{
+    name:"john"
+    email:"john@wick.com"
+
+}
+orders

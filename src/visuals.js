@@ -3,6 +3,7 @@ let formContainer = document.getElementsByClassName("cms-login");
 let cmsPage = document.getElementsByClassName("cms-wrapper");
 let addProductForm = document.getElementById("add-form");
 let add_btn = document.getElementById("add-btn");
+let databaseTable = document.getElementById("table");
 
 let URL = window.location.href;
 
@@ -18,6 +19,7 @@ if (URL.match("CMS")) {
   };
   add_btn.onclick = () => {
     addProductForm.style.display = "block";
+    databaseTable.style.display = "block";
   };
 } else if (URL.match("Register")) {
   let switch_signIn = document.getElementById("show-signIn");
@@ -52,3 +54,21 @@ if (URL.match("CMS")) {
     switch_signIn.style.color = "white";
   };
 }
+
+let signup_btn = document.getElementById("signupBtn");
+let signin_btn = document.getElementById("signinBtn");
+let regist_form = document.getElementById("register-form");
+let account_page = document.getElementById("account-page");
+
+// hiding register fomrs and displaying account page
+signup_btn.onclick = () =>{
+  regist_form.style.display = "none";
+  account_page.style.display = "block";
+  
+}
+signin_btn.onclick = () =>{
+  regist_form.style.display = "none";
+  account_page.style.display = "block";
+
+}
+
