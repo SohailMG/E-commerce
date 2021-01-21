@@ -1,4 +1,7 @@
 <?php
+/**
+ * outputs the head tags of html as well as css links
+ */
 function outputHTMLtags(){
     echo '<!DOCTYPE html>
     <html lang="en">
@@ -16,7 +19,11 @@ function outputHTMLtags(){
     <body>';
 
 }
-
+/**
+ * creates hyperlinks for each page in a given array
+ * and adds a selected class to highlight the active page
+ * @param pageName is name of the each page
+ */
 function outputHeaderNav($pageName){
     echo '
 
@@ -46,7 +53,9 @@ function outputHeaderNav($pageName){
 
 }
 
-
+/**
+ * outputs the footer design for each [age]
+ */
 function outputFooter(){
     echo '
     <footer>

@@ -17,9 +17,8 @@ outputHeaderNav("CMS");
             <div class="side-menu">
                 <div id="">Menu</div>
                 <button id="add-btn">Add Product</button>
-                <button id="remove-btn">Remove Product</button>
-                <button id="update-product">Update Product</button>
-                <button id="update-customer">Update Customer Details</dbuttoniv>
+                <button id="remove-btn">Remove Order</button>
+                <button id="update-btn">Update Product details</button>
             </div>
             <div class="task-container">
                 <div id="add-form">
@@ -51,10 +50,23 @@ outputHeaderNav("CMS");
                         </tr>
                     </tbody>
                 </table>
+                <!-- remove product form -->
                 <div id="remove-form">
-
+                <h1>Remove Order</h1>
+                Order ID: <input type="text" placeholder="0pwis8ue82js9dg33ldis">
+                <button id="remove-product">remove</button>
                 </div>
-                <div id="update-form"></div>
+                <!-- update product form -->
+                <div id="update-form">
+                <h1>Update Product</h1>
+                ID: <input type="text" placeholder="0pwis8ue82js9dg33ldis">
+                <button id="view-product">View</button>
+                Name: <input type="text">
+                Price: <input type="text"placeholder="33.30">
+                Stock: <input type="text" placeholder="10">
+                Size: <input type="text" placeholder="50ml">
+                <button id="update-product">Change</button>
+                </div>
             </div>
 
 

@@ -1,3 +1,5 @@
+
+/* account page design  */
 #register-form{
     position: absolute;
     margin-left: 16%;
@@ -7,12 +9,15 @@
     background-color: rgb(216, 228, 240);
     box-shadow: 0 10px 10px grey;
 }
+/* heading of each form */
+#register-form > h1{
+    text-align: center;
+    color: white;
+    text-shadow: 0 10px 10px black;
+}
+/* sign up form design  */
 #sign-up{
     display: none;
-    width: 190px;
-    margin-left: 10px;
-}
-#sign-in{
     width: 190px;
     margin-left: 10px;
 }
@@ -22,29 +27,6 @@
     width: 200px;
     border: none;
 
-}
-#sign-in > input{
-    margin-top: 10px;
-    height: 30px;
-    width: 200px;
-    border: none;
-
-}
-#register-form > h1{
-    text-align: center;
-    color: white;
-    text-shadow: 0 10px 10px black;
-}
-#sign-in > button{
-    width: 70px;
-    height: 30px;
-    background-color: cadetblue;
-    color: black;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px black;
-    margin-left: 67px;
-    margin-top: 31px;
 }
 #sign-up > button{
     width: 70px;
@@ -57,6 +39,32 @@
     margin-left: 67px;
     margin-top: 31px;
 }
+/* sign in form design  */
+#sign-in{
+    width: 190px;
+    margin-left: 10px;
+}
+
+#sign-in > input{
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    border: none;
+
+}
+#sign-in > button{
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin-left: 67px;
+    margin-top: 31px;
+}
+
+/* sign in and up switch buttons styles */
 #switch-btns{
     display: flex;
     margin-left: 30%;
@@ -73,11 +81,14 @@
     background-color: white;
     color: black;
 }
+/* form background image */
 #formBg > img{
     position: absolute;
     left: 26%;
     margin-top: 5%;
 }
+
+/* account details page design  */
 #account-page{
     display: none;
     position: absolute;

@@ -1,3 +1,4 @@
+/* styling of cms login page */
 .cms-login{
     margin-top: 10%;
     margin-left: 40%;
@@ -28,13 +29,16 @@
     color: white;
 
 }
+/* styling of main cms page  */
 .cms-wrapper{
     display: none ;
+    height: 100%;
 }
 .cms-container{
     display: flex;
-    height: 500px;
+    height: 100%;
 }
+/* styling of side menu */
 .side-menu{
     text-align: center;
     width: 200px;
@@ -63,6 +67,7 @@
     height: 100%;
     background-color:rgb(1, 41, 44);
 }
+/* styling of add product form */
 #add-form{
     display: none;
     margin-left: 7%;
@@ -71,9 +76,8 @@
     color: white;
 }
 #add-form > input{
-    border-radius: 10px;
     border: none;
-    background-color: grey;
+    background-color: white;
     width: 200px;
     height: 20px;
     padding: 5px;
@@ -91,6 +95,7 @@
     margin-left: 67px;
     margin-top: 31px;
 }
+/* styling of table representing database */
 #table {
     position: absolute;
     border:1px solid #C0C0C0;
@@ -114,4 +119,76 @@
     color: white;
     background-color:rgb(124, 124, 124);
 }
+
+/* remove product */
+#remove-form{
+    display: none;
+    margin-left: 7%;
+    margin-top: 48px;
+    width: 212px;
+    color: white;
+
+}
+#remove-form > input{
+    border: none;
+    background-color: white;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    margin-top: 10px;
+
+}
+#remove-form > button{
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin-left: 67px;
+    margin-top: 31px;
+}
+
+/* update product */
+#update-form{
+    display: none;
+    margin-left: 7%;
+    margin-top: 48px;
+    width: 222px;
+    color: white;
+
+}
+#update-form > input{
+    border: none;
+    background-color: white;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    margin-top: 10px;
+
+}
+#update-product{
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin-left: 67px;
+    margin-top: 31px;
+}
+#view-product{
+    margin-left: 63%;
+    margin-top: 10px;
+    width: 70px;
+    height: 30px;
+    background-color: cadetblue;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
 
