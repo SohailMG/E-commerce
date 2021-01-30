@@ -3,6 +3,7 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Home");
 ?>
+<!-- website window resolution 1278 x 1940.58 -->
 </nav>
 <main>
     <section>

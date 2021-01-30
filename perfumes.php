@@ -3,6 +3,7 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Perfumes");
 ?>
+<!-- website window resolution 1278 x 1940.58 -->
 
 <div class="products-wrapper">
     <div class="gridwrapper">
@@ -104,11 +105,6 @@ outputHeaderNav("Perfumes");
         </div>
     </div>
 </div>
-
-
-
-
-
 <?php
 outputFooter();
 ?>

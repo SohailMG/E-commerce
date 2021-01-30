@@ -3,7 +3,7 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Register");
 ?>
-
+<!-- website window resolution 1278 x 1940.58 -->
 <main>
     <div id="formBg"><img src="Images/Register.jpg" alt=""></div>
     <div id="register-form">
@@ -26,7 +26,6 @@ outputHeaderNav("Register");
             <button id="signinBtn">Login</button>
         </div>
     </div>
-
         <div id="account-page">
             <div id="account-container">
             <h1>Account Details</h1>
@@ -40,14 +39,7 @@ outputHeaderNav("Register");
 
         </div>
 
-
-
-
 </main>
-
-
-
-
 
 
 <?php
