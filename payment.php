@@ -3,6 +3,7 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Payment");
 ?>
+<!-- website window resolution 1278 x 1940.58 -->
 <main>
 
     <div class="pay-form">
@@ -16,18 +17,6 @@ outputHeaderNav("Payment");
 
     </div>
 </main>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 outputFooter();

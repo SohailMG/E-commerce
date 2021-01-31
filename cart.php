@@ -3,6 +3,7 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Cart");
 ?>
+<!-- website window resolution 1278 x 1940.58 -->
 <main>
 
     <div class="cart-container">
