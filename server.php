@@ -1,18 +1,52 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/perfumes.css">
+    <title>Document</title>
+</head>
+<body>
 <?php
 
+
+//Include libraries
 require __DIR__ . '/vendor/autoload.php';
 
-// creating instance of mongodb client
-$client = (new MongoDB\Client);
+//Create instance of MongoDB client
+$mongoClient = (new MongoDB\Client);
 
-// selecting database
-$database = $client->www;
+//Select a database
+$db = $mongoClient->www;
 
-// selecting collection
-$collection = $database->Products;
+//Extract the data that was sent to the server
+$name = filter_input(INPUT_GET, 'Name', FILTER_SANITIZE_STRING);
 
-$result = $collection->insertOne( [ 'name' => 'Hinterland',
-                                 'brewery' => 'BrewDog' ] );
+//Create a PHP array with our search criteria
+$findCriteria = [
+    "Name" => $name,
+];
 
-echo "Inserted with Object ID '{$result->getInsertedId()}'";
+//Find all of the customers that match  this criteria
+$cursor = $db->Products->find();
+
+//Output the results
+echo "<h1>Results</h1>";
+echo '<div class="products-wrapper">
+            <div class="gridwrapper">';
+foreach ($cursor as $cust) {
+    
+              echo'<div class="item-one">
+               <div id="item-picture"></div>
+               <div id="item-name">'. $cust['Name'].'</div>
+               <div id="item-price">'. $cust['Price'].'</div>
+               <button id="addbtn">Add to Cart</button>
+        </div>
+
+               ';
+}
+echo'    </div>
+</div>';
+
+echo '</body>
+</html>';

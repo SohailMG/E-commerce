@@ -6,8 +6,8 @@
 }
 /* grid of products */
 .gridwrapper{
-
-    color: white;
+    text-align: center;
+    color: rgb(10, 10, 10);
     display: grid;
     
     grid-gap: 1em;
@@ -16,7 +16,6 @@
     grid-template-columns: repeat(4,1fr);
 }
 .gridwrapper > div{
-    background:rgb(128, 128, 128);
     padding: 1em;
     width: 250px;
     height: 250px;
@@ -38,6 +37,6 @@
     background-color: black;
 }
 #item-picture{
-    width: 250px;
-    height: 185px;
+    width: 200px;
+    height: 200px;
 }
