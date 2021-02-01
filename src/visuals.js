@@ -14,23 +14,26 @@ let URL = window.location.href;
  */
 let remove_btn = document.getElementById("remove-btn");
 let update_btn = document.getElementById("update-btn");
+let view_btn = document.getElementById("view-btn");
 if (URL.match("CMS")) {
   cmsBtn.onclick = () => {
     for (var i = 0; i < formContainer.length; i++) {
       formContainer[i].style.display = "none";
       cmsPage[i].style.display = "block";
+      databaseTable.style.display = "none";
     }
   };
   // displying add product form when button is clicked
   add_btn.onclick = () => {
     addProductForm.style.display = "block";
     updateProductForm.style.display = "none";
-    databaseTable.style.display = "block";
     removeProductForm.style.display = "none";
-
+    databaseTable.style.display = "none";
+    
     // changing backgroun color of selected option
     add_btn.style.backgroundColor="rgb(1, 41, 44)";
     remove_btn.style.backgroundColor="grey";
+    view_btn.style.backgroundColor="grey";
     update_btn.style.backgroundColor="grey";
 
   };
@@ -39,23 +42,36 @@ if (URL.match("CMS")) {
     console.log("workin")
     addProductForm.style.display = "none";
     updateProductForm.style.display = "none";
-    databaseTable.style.display = "block";
+    databaseTable.style.display = "none";
     removeProductForm.style.display = "block";
 
     remove_btn.style.backgroundColor="rgb(1, 41, 44)";
     add_btn.style.backgroundColor="grey";
     update_btn.style.backgroundColor="grey";
+    view_btn.style.backgroundColor="grey";
   };
   // displaying update product form 
   update_btn.onclick = () => {
     addProductForm.style.display = "none";
     updateProductForm.style.display = "block";
-    databaseTable.style.display = "block";
+    databaseTable.style.display = "none";
     removeProductForm.style.display = "none";
 
     update_btn.style.backgroundColor="rgb(1, 41, 44)";
     remove_btn.style.backgroundColor="grey";
     add_btn.style.backgroundColor="grey";
+    view_btn.style.backgroundColor="grey";
+  };
+  view_btn.onclick = () => {
+    addProductForm.style.display = "none";
+    updateProductForm.style.display = "none";
+    databaseTable.style.display = "block";
+    removeProductForm.style.display = "none";
+
+    view_btn.style.backgroundColor="rgb(1, 41, 44)";
+    remove_btn.style.backgroundColor="grey";
+    add_btn.style.backgroundColor="grey";
+    update_btn.style.backgroundColor="grey";
   };
 
 

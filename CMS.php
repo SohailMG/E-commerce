@@ -2,6 +2,19 @@
 include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("CMS");
+
+
+//Include libraries
+require __DIR__ . '/vendor/autoload.php';
+
+//Create instance of MongoDB client
+$mongoClient = (new MongoDB\Client);
+
+//Select a database
+$db = $mongoClient->www;
+
+// creating a cursor of all product's data
+$cursor = $db->Products->find();
 ?>
 <!-- website window resolution 1278 x 1940.58 -->
 <main>
@@ -20,6 +33,7 @@ outputHeaderNav("CMS");
                 <button id="add-btn">Add Product</button>
                 <button id="remove-btn">Remove Order</button>
                 <button id="update-btn">Update Product details</button>
+                <button id="view-btn">View Products</button>
             </div>
             <div class="task-container">
                 <div id="add-form">
@@ -42,13 +56,18 @@ outputHeaderNav("CMS");
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
+                    <?php
+                        foreach ($cursor as $product) {
+
+                           echo' <tr>';
+                           echo' <td>'.$product['_id'].'</td>';
+                           echo' <td>'.$product['Name'].'</td>';
+                           echo' <td>£'.$product['Price'].'</td>';
+                           echo' <td>'.$product['size'].'</td>';
+                           echo' <td>'.$product['Quantity'].'</td>';
+                           echo' </tr>';
+                        }
+                     ?>
                     </tbody>
                 </table>
                 <!-- remove product form -->
