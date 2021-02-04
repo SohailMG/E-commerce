@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 let cmsBtn = document.getElementById("login-btn");
 let formContainer = document.getElementsByClassName("cms-login");
 let cmsPage = document.getElementsByClassName("cms-wrapper");
@@ -12,10 +19,21 @@ let URL = window.location.href;
 /**
  * removes login form and displays cms page
  */
+
 let remove_btn = document.getElementById("remove-btn");
 let update_btn = document.getElementById("update-btn");
 let view_btn = document.getElementById("view-btn");
 if (URL.match("CMS")) {
+  window.onload = function() {
+    if(localStorage.getItem("loggedAdmin")){
+    let fc = document.getElementsByClassName("cms-login");
+    let cms = document.getElementsByClassName("cms-wrapper");
+          for (var i = 0; i < fc.length; i++) {
+            fc[i].style.display = "none";
+            cms[i].style.display = "block";
+          } 
+        }
+   }
   cmsBtn.onclick = () => {
     for (var i = 0; i < formContainer.length; i++) {
       formContainer[i].style.display = "none";

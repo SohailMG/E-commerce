@@ -12,9 +12,9 @@
     width: 150px;
     height: 30px;
 }
-.cms-login > button{
-    width: 70px;
-    height: 30px;
+.cms-login > #adminlgnbtn{
+    width: 80px;
+    height: 40px;
     background-color: cadetblue;
     color: black;
     border: none;
