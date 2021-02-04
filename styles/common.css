@@ -144,5 +144,17 @@ footer{
     margin-top: 10px;
 
 }
+button#logoutadmin {
+    border: none;
+    display: none;
+    width: 100px;
+    height: 40px;
+    margin-top: 38px;
+    margin-right: 34px;
+    background-color: rgba(0, 0, 0, 0.582);
+    color: white;
+    box-shadow: 0 10px  10px  rgb(143, 143, 143);
+    border-radius: 5px;
+}
 
 

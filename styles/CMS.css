@@ -12,9 +12,9 @@
     width: 150px;
     height: 30px;
 }
-.cms-login > button{
-    width: 70px;
-    height: 30px;
+.cms-login > #adminlgnbtn{
+    width: 80px;
+    height: 40px;
     background-color: cadetblue;
     color: black;
     border: none;
@@ -31,7 +31,7 @@
 }
 /* styling of main cms page  */
 .cms-wrapper{
-    display: none ;
+    display: block ;
     height: 100%;
 }
 .cms-container{
@@ -97,27 +97,33 @@
 }
 /* styling of table representing database */
 #table {
+    text-align: center;
+    display: none;
     position: absolute;
     border:1px solid #C0C0C0;
     border-collapse:collapse;
-    padding:5px;
-    margin-left: 36%;
-    bottom: 12%;
+    margin-left: 28%;
+    /* margin-top: 10%; */
 }
 #table th {
+    color: black;
+    width: 120px;
     border:1px solid #C0C0C0;
     padding:5px;
-    background:#F0F0F0;
+    background:rgb(255, 229, 174);
 }
 #table td {
+    background-color: white;
+    color: rgb(0, 0, 0);
     border:1px solid #C0C0C0;
     padding:5px;
-    width: 100px;
-    height: 300px;
+    /* width: 100px;
+    height: 300px; */
 }
 #table caption{
+    padding-top: 10px;
     color: white;
-    background-color:rgb(124, 124, 124);
+    background-color:rgb(173, 173, 173);
 }
 
 /* remove product */
@@ -190,5 +196,3 @@
     border-radius: 10px;
     box-shadow: 0 0 10px black;
 }
-
-

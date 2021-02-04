@@ -36,6 +36,7 @@ function outputHeaderNav($pageName){
         </div>
         <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>
         <div id="cart"><img src="Images/Cart.png" alt=""><a href="cart.php">Cart</a></div>
+        <button id="logoutadmin" onclick="logoutadmin()">Logout</button>
     </header>
     <nav>';
 
@@ -82,10 +83,10 @@ function outputFooter(){
 </footer>
 
 
-
-
 </body>
-<script src="src/visuals.js"></script>
+<script src="src/admin-login.js"></script>
+<script src="src/CMS-manager.js"></script>
+<script src="src/account.js"></script>
 
 </html>';
 }
