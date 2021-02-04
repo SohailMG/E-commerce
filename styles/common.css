@@ -1,6 +1,6 @@
 
 /* styling of website header */
-header{
+#header-wrapper{
     display: flex;
     width: 100%;
     height: 127px;
@@ -8,7 +8,7 @@ header{
 
 }
 /* styling of account and cart hyperlinks */
-header  a{
+#header-wrapper  a{
     text-decoration: none;
     color: black;
 }
@@ -143,6 +143,20 @@ footer{
     color: cadetblue;
     margin-top: 10px;
 
+}
+#logoutadmin {
+    border: none;
+    /* display: none; */
+    width: 100px;
+    height: 40px;
+    margin-top: 38px;
+    margin-right: 34px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px  10px  rgb(0, 0, 0);
+}
+#logoutadmin:hover{
+    background-color: teal;
+    color: white;
 }
 
 
