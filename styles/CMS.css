@@ -12,6 +12,13 @@
     width: 150px;
     height: 30px;
 }
+#login-btn{
+    margin-top: 20px;
+    width: 80px;
+    height: 40px;
+    background-color: teal;
+    color: white;
+}
 .cms-login > #adminlgnbtn{
     width: 80px;
     height: 40px;
@@ -24,7 +31,7 @@
     margin-top: 31px;
 
 }
-.cms-login > button:hover{
+.cms-login > #login-btn:hover{
     background-color: black;
     color: white;
 

@@ -10,11 +10,14 @@ if (cmsURL.match("CMS")) {
 
   //Checks whether user is logged in.
   function checkLogin() {
+      let logoutStr = '<button id="logoutadmin" onclick="logoutadmin()">Logout</button>'
+      let header_wrpr = document.getElementById("header-wrapper");
     //Create event handler that specifies what should happen when server responds
     request.onload = function () {
       if (request.responseText === "ok") {
         showCMSPage();
-        document.getElementById("logoutadmin").style.display = "block";
+
+        header_wrpr.innerHTML+=logoutStr;
         sessionStorage.setItem("adminlogged", true);
       } else {
         console.log(request.responseText);
@@ -30,6 +33,8 @@ if (cmsURL.match("CMS")) {
   function login() {
     var usrEmail = document.getElementById("admin-username").value;
     var usrPassword = document.getElementById("admin-password").value;
+    let logoutStr = '<button id="logoutadmin" onclick="logoutadmin()">Logout</button>'
+    let header_wrpr = document.getElementById("header-wrapper");
 
     if (document.getElementById("admin-username").value == "") {
       console.log("empty");
@@ -46,6 +51,7 @@ if (cmsURL.match("CMS")) {
         //Add data to page
         if (responseData === "ok") {
           console.log("login successfull");
+          header_wrpr.innerHTML+=logoutStr;
           showCMSPage();
         } else {
           console.log("login unsuccessfull");
@@ -78,7 +84,7 @@ if (cmsURL.match("CMS")) {
     request.send();
   }
 
-  
+
   function showCMSPage() {
     let request = new XMLHttpRequest();
     request.onload = function () {
@@ -105,11 +111,8 @@ if (cmsURL.match("CMS")) {
       if (request.status === 200) {
         //Get data from server
         var cms_page_content = request.responseText;
-
-        document.getElementById("cms_main").innerHTML = cms_page_content.substr(
-          1223,
-          331
-        );
+        
+        document.querySelector('html').innerHTML = cms_page_content;
       }
     };
     request.open("GET", "CMS.php");

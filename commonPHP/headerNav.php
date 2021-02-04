@@ -28,6 +28,7 @@ function outputHeaderNav($pageName){
     echo '
 
     <header>
+    <div id="header-wrapper">
         <div id="logo"><img src="Images/logo.png" alt=""></div>
         <div class="searchContainer">
             <input type="text" placeholder="Search..." id="search-box">
@@ -36,8 +37,8 @@ function outputHeaderNav($pageName){
         </div>
         <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>
         <div id="cart"><img src="Images/Cart.png" alt=""><a href="cart.php">Cart</a></div>
-        <button id="logoutadmin" onclick="logoutadmin()">Logout</button>
-    </header>
+    </div>
+        </header>
     <nav>';
 
     $pageNames = array("Home","Perfumes");
