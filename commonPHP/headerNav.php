@@ -88,6 +88,7 @@ function outputFooter(){
 <script src="src/admin-login.js"></script>
 <script src="src/CMS-manager.js"></script>
 <script src="src/account.js"></script>
+<script src="src/addtocart.js"></script>
 
 </html>';
 }

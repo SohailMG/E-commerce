@@ -19,6 +19,7 @@ if (cmsURL.match("CMS")) {
 
         header_wrpr.innerHTML+=logoutStr;
         sessionStorage.setItem("adminlogged", true);
+        localStorage.setItem("adminlogged", true);
       } else {
         console.log(request.responseText);
         console.log("not logged");
@@ -60,8 +61,6 @@ if (cmsURL.match("CMS")) {
       } else console.log("Error communicating with server");
     };
 
-    //Extract login data
-
     //Set up and send request
     request.open("POST", "./Sessions/login-admin.php");
     request.setRequestHeader(
@@ -77,6 +76,7 @@ if (cmsURL.match("CMS")) {
     request.onload = function () {
       checkLogin();
       showCMSlogin();
+      localStorage.removeItem("adminlogged");
     };
 
     //Set up and send request

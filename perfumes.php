@@ -26,11 +26,11 @@ echo '<div class="gridwrapper">';
 foreach ($cursor as $product) {
 
     echo '<div class="item-one">';
-    echo ' <div id="item-picture"><img src="./' . $product['img_url'] . '" alt=""></div>';
-    echo ' <div id="item-name">' . $product['Name'] . '</div>';
-    echo ' <div id="item-size">' . $product['size'] . '</div>';
-    echo ' <div id="item-price">£' . $product['Price'] . '</div>';
-    echo ' <button id="addbtn">Add to Cart</button>
+    echo ' <div class="item-picture"><img class="item-img" src="./' . $product['img_url'] . '" alt=""></div>';
+    echo ' <div class="item-name">' . $product['Name'] . '</div>';
+    echo ' <div class="item-size">' . $product['size'] . '</div>';
+    echo ' <div class="item-price">£' . $product['Price'] . '</div>';
+    echo ' <button class="addbtn" >Add to Cart</button>
               </div>';
 }
 echo '</div>

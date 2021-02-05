@@ -25,22 +25,22 @@
     opacity: 50%;
 }
 /* add to cart button styling */
-.gridwrapper #addbtn{
+.gridwrapper .addbtn{
     width: 250px;
     height: 40px;
     background-color:rgb(1, 105, 97);
     color: white;
     border: none;
 }
-.gridwrapper #addbtn:hover{
+.gridwrapper .addbtn:hover{
     color: white;
     background-color: black;
 }
-#item-picture{
+.item-picture{
     width: 200px;
     height: 200px;
 }
-#item-name{
+.item-name{
     font-weight: bold;
     color: tomato;
 }

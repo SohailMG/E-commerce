@@ -5,7 +5,7 @@
  * removes login form and displays cms page
  */
 
-if (sessionStorage.getItem("adminlogged")) {
+if (cmsURL.match("CMS")) {
   // displying add product form when button is clicked
   function addProduct() {
     document.getElementById("add-form").style.display = "block";
