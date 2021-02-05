@@ -1,5 +1,5 @@
 <main>
-<!-- main CMS page content -->
+    <!-- main CMS page content -->
     <div class="cms-wrapper">
         <div class="cms-container">
             <div class="side-menu">
@@ -14,12 +14,17 @@
                 <!-- add product form  -->
                 <div id="add-form">
                     <h1>Product Details</h1>
-                    Name: <input type="text">
-                    Price: <input type="text">
-                    Quantity: <input type="text">
-                    Size: <input type="text">
-                    <button id="addProduct">Add</button>
+                    Name: <input type="text" id="addform-Name">
+                    Price: <input type="text" id="addform-Price">
+                    Quantity: <input type="text" id="addform-Quantity">
+                    Size: <input type="text" id="addform-Size">
+                    Image: <input type="text" id="addform-Image">
+                    KeyWords: <input type="text" id="addform-keywords">
+                    <button id="addProduct" onclick="addNewProduct()">Add</button>
                 </div>
+
+
+
                 <table id="table">
                     <caption>Products Database</caption>
                     <thead>

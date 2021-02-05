@@ -89,6 +89,7 @@ function outputFooter(){
 <script src="src/CMS-manager.js"></script>
 <script src="src/account.js"></script>
 <script src="src/addtocart.js"></script>
+<script src="src/CMS-addProduct-ajax.js"></script>
 
 </html>';
 }
