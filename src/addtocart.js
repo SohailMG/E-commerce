@@ -21,6 +21,7 @@ function addToCart(event) {
   let itemSize = shopItem.getElementsByClassName("item-size")[0].innerHTML;
   let itemPrice = shopItem.getElementsByClassName("item-price")[0].innerHTML;
   console.log(itemname, itemSize, itemPrice, itemImage);
+  
 
   //Create event handler that specifies what should happen when server responds
   request.onload = function () {

@@ -21,7 +21,8 @@ $cursor = $db->Products->find();
     <div class="cms-login">
         <h1>Admin Login</h1>
         Username: <input type="text" id="admin-username" >
-        Password : <input type="text" id="admin-password" >
+        Password : <input type="password" id="admin-password" >
+        <p id="errorMsg"></p>
         <a href="#">Forget Password?</a>
         <button id="login-btn" onclick="login()">Login</button>
     </div>

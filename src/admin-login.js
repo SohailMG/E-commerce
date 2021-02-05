@@ -38,7 +38,9 @@ if (cmsURL.match("CMS")) {
     let header_wrpr = document.getElementById("header-wrapper");
 
     if (document.getElementById("admin-username").value == "") {
-      console.log("empty");
+      document.getElementById("admin-username").style.border = "1px solid red";
+      document.getElementById("admin-password").style.border = "1px solid red";
+      document.getElementById("errorMsg").innerText = "Fill all fileds";
       return;
     }
 

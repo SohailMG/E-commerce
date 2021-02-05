@@ -17,9 +17,10 @@
                     Name: <input type="text" id="addform-Name">
                     Price: <input type="text" id="addform-Price">
                     Quantity: <input type="text" id="addform-Quantity">
-                    Size: <input type="text" id="addform-Size">
-                    Image: <input type="text" id="addform-Image">
-                    KeyWords: <input type="text" id="addform-keywords">
+                    Size: <input type="text" id="addform-Size" placeholder="e.g 50ml">
+                    Image: <input type="text" id="addform-Image" placeholder="e.g Images/Boss.png">
+                    KeyWords: <input type="text" id="addform-keywords" placeholder="mens black cheap..etc">
+                    <p id="errorMsg"></p>
                     <button id="addProduct" onclick="addNewProduct()">Add</button>
                 </div>
 
@@ -48,7 +49,7 @@
                             echo ' <tr>';
                             echo ' <td>' . $product['_id'] . '</td>';
                             echo ' <td>' . $product['Name'] . '</td>';
-                            echo ' <td>£' . $product['Price'] . '</td>';
+                            echo ' <td>£'. $product['Price'] . '</td>';
                             echo ' <td>' . $product['size'] . '</td>';
                             echo ' <td>' . $product['Quantity'] . '</td>';
                             echo ' </tr>';

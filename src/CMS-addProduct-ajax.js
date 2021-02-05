@@ -1,31 +1,64 @@
 function addNewProduct() {
-  let NewProductName = document.getElementById("addform-Name").value;
-  let NewProductPrice = document.getElementById("addform-Price").value;
-  let NewProductSize = document.getElementById("addform-Size").value;
-  let NewProductQuantity = document.getElementById("addform-Quantity").value;
-  let NewProductImage = document.getElementById("addform-Image").value;
-  let NewProductKeywords = document.getElementById("addform-keywords").value;
+  let NewProductName = document.getElementById("addform-Name");
+  let NewProductPrice = document.getElementById("addform-Price");
+  let NewProductSize = document.getElementById("addform-Size");
+  let NewProductQuantity = document.getElementById("addform-Quantity");
+  let NewProductImage = document.getElementById("addform-Image");
+  let NewProductKeywords = document.getElementById("addform-keywords");
 
+  // array of form elms
+  let formElms = [
+    NewProductName,
+    NewProductPrice,
+    NewProductSize,
+    NewProductQuantity,
+    NewProductImage,
+    NewProductKeywords,
+  ];
+  //   checking if form is input fields are empty
+  if (
+    NewProductName.value == "" ||
+    NewProductPrice.value == "" ||
+    NewProductSize.value == "" ||
+    NewProductQuantity.value == "" ||
+    NewProductImage.value == "" ||
+    NewProductKeywords.value == ""
+  ) {
+    // setting border to red when all fileds are empty
+    formElms.forEach((element) => {
+      element.style.border = "1px solid red";
+      document.getElementById("errorMsg").innerText = "Fill all fileds";
+    });
+    return;
+  } else {
+    // creating json object to of new product data
+    let newItemData = {
+      Name: NewProductName.value,
+      Price: NewProductPrice.value,
+      Quantity: NewProductQuantity.value,
+      size: NewProductSize.value,
+      img_url: NewProductImage.value,
+      KeyWords: NewProductKeywords.value,
+    };
 
-  let newItemData = {
-    Name: NewProductName,
-    Price: NewProductPrice,
-    Quantity: NewProductQuantity,
-    size: NewProductSize,
-    img_url: NewProductImage,
-    KeyWords: NewProductKeywords,
-  };
-
-  request.onload = function () {
-    //Check HTTP status code
-    if (request.status === 200) {
-      console.log(request.responseText);
-    } else console.log("Error communicating with server");
-  };
-  request.open("POST", "./add-product.php");
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(
-    "newItemData=" +
-     JSON.stringify(newItemData)
-  );
+    request.onload = function () {
+      //Check HTTP status code
+      if (request.status === 200) {
+        console.log("connection successful");
+      } else console.log("Error communicating with server");
+    };
+    // sending a post request to add product data as a json string
+    request.open("POST", "./add-product.php");
+    request.setRequestHeader(
+      "Content-type",
+      "application/x-www-form-urlencoded"
+    );
+    request.send("newItemData=" + JSON.stringify(newItemData));
+  }
+  //   setting form border to green and clear each field
+  formElms.forEach((element) => {
+    element.style.border = "1px solid green";
+    element.value = "";
+    document.getElementById("errorMsg").innerText = "";
+  });
 }
