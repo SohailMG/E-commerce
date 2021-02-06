@@ -11,8 +11,10 @@ for (let i = 0; i < addToCart_btns.length; i++) {
  *
  * @param {*} event
  */
+var cart_count = 1;
 function addToCart(event) {
   var addToCart_btn = event.target;
+  let cart_amount = document.getElementById("cart-amount");
   let shopItem = addToCart_btn.parentElement;
 
   // storing item details
@@ -20,10 +22,13 @@ function addToCart(event) {
   let itemname = shopItem.getElementsByClassName("item-name")[0].innerHTML;
   let itemSize = shopItem.getElementsByClassName("item-size")[0].innerHTML;
   let itemPrice = shopItem.getElementsByClassName("item-price")[0].innerHTML;
-  console.log(itemname, itemSize, itemPrice, itemImage);
-  
+  cart_amount.style.color="red";
+  cart_amount.innerHTML = cart_count++;
+  console.log(cart_count);
 
-  //Create event handler that specifies what should happen when server responds
+
+
+  // Create event handler that specifies what should happen when server responds
   request.onload = function () {
     //Check HTTP status code
     if (request.status === 200) {
@@ -42,6 +47,6 @@ function addToCart(event) {
       "&itemSize=" +
       itemSize +
       "&itemImg=" +
-      itemImage
+      itemImage.substr(26)
   );
 }

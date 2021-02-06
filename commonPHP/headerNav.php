@@ -36,7 +36,7 @@ function outputHeaderNav($pageName){
             <div id="search-icon"><a href="search.php"><img src="Images/search.png" alt=""></a></div>
         </div>
         <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>
-        <div id="cart"><img src="Images/Cart.png" alt=""><a href="cart.php">Cart</a></div>
+        <div id="cart"><img src="Images/Cart.png" alt=""><a href="cart.php" id="cart-amount">Cart</a></div>
     </div>
         </header>
     <nav>';

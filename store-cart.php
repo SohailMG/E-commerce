@@ -17,10 +17,10 @@ $itemImg   = filter_input(INPUT_POST, 'itemImg', FILTER_SANITIZE_STRING);
 
 // array of item 
 $cartData = [
-    "itemName"  => $itemName,
-    "itemPrice" => $itemPrice,
-    "itemSize"  => $itemSize,
-    "itemImage" => $itemImg
+    "Name"  => $itemName,
+    "Price" => $itemPrice,
+    "Size"  => $itemSize,
+    "Img_url" => $itemImg
 ];
 // storing item data in cart collection
 $cart_collection->insertOne($cartData);

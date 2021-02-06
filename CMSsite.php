@@ -24,6 +24,9 @@
                     <button id="addProduct" onclick="addNewProduct()">Add</button>
                 </div>
 
+                <div id="added-item-info">
+                </div>
+
 
 
                 <table id="table">

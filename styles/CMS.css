@@ -118,6 +118,41 @@
     margin-left: 67px;
     margin-top: 31px;
 }
+#added-item-info{
+    border: none;
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 448px;
+    right: 18%;
+    top: 33%;
+    background-color: white;
+    box-shadow: 0 10px 10px black;
+    border: none;
+    border-radius: 18px;
+}
+#green-tick{
+    width: 100px;
+    height: 100px;
+    padding-left: 32%;
+}
+#added-item-info > h1{
+    text-align: center;
+    color: green;
+    font-size: 15px;
+
+}
+#added-item-info > p{
+    padding-top: 7px;
+    padding-left: 20px;
+    height: 39px;
+    color: white;
+    background-color: rgb(1, 41, 44);
+    /* background-color: darkslategrey; */
+    padding-left: 20px;
+    padding-bottom: -3px;
+    padding-top: 10;
+}
 /* styling of table representing database */
 #table {
     text-align: center;

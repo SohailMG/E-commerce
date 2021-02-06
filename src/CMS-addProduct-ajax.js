@@ -44,7 +44,12 @@ function addNewProduct() {
     request.onload = function () {
       //Check HTTP status code
       if (request.status === 200) {
-        console.log("connection successful");
+        console.log(request.responseText);
+        if (request.responseText != "failed") {
+          let added_item_form = document.getElementById("added-item-info");
+          added_item_form.style.display="block";
+          added_item_form.innerHTML = request.responseText;
+        }
       } else console.log("Error communicating with server");
     };
     // sending a post request to add product data as a json string
@@ -55,10 +60,23 @@ function addNewProduct() {
     );
     request.send("newItemData=" + JSON.stringify(newItemData));
   }
+
   //   setting form border to green and clear each field
   formElms.forEach((element) => {
     element.style.border = "1px solid green";
     element.value = "";
     document.getElementById("errorMsg").innerText = "";
   });
+}
+
+function showAdded( name, price, size, stock) {
+  let name_field = document.getElementById("new-item-name");
+  let price_field = document.getElementById("new-item-price");
+  let size_field = document.getElementById("new-item-size");
+  let qnty_field = document.getElementById("new-item-qty");
+
+  name_field.innerHTML += name;
+  price_field.innerHTML += price;
+  size_field.innerHTML += size;
+  qnty_field.innerHTML += stock;
 }
