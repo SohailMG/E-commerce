@@ -32,7 +32,6 @@ function outputHeaderNav($pageName){
         <div id="logo"><img src="Images/logo.png" alt=""></div>
         <div class="searchContainer">
             <input type="text" placeholder="Search..." id="search-box">
-
             <div id="search-icon"><button id="search-btn" onclick="search_item()"><img src="./Images/search.png" alt=""></button></div>
         </div>
         <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>

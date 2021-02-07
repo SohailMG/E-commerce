@@ -3,11 +3,11 @@
  * to a php script to be stored in database
  */
 
-
 let addToCart_btns = document.getElementsByClassName("addbtn");
 
 for (let i = 0; i < addToCart_btns.length; i++) {
   let addToCart_btn = addToCart_btns[i];
+
   addToCart_btn.addEventListener("click", addToCart);
 }
 /**
@@ -28,11 +28,9 @@ function addToCart(event) {
   let itemname = shopItem.getElementsByClassName("item-name")[0].innerHTML;
   let itemSize = shopItem.getElementsByClassName("item-size")[0].innerHTML;
   let itemPrice = shopItem.getElementsByClassName("item-price")[0].innerHTML;
-  cart_amount.style.color="red"
+  cart_amount.style.color = "red";
   cart_amount.innerHTML = cart_count++;
   console.log(cart_count);
-
-
 
   // Create event handler that specifies what should happen when server responds
   request.onload = function () {
