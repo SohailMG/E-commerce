@@ -24,7 +24,8 @@
 #search-icon{
     width: 50px;
     height: 50px;
-    margin-top: 6%;
+    margin-top: 5%;
+    margin-left: 10px;
 }
 #search-box{
     width: 600px;
@@ -104,7 +105,9 @@ height: 800px;
 footer{
     height: 200px;
     background-color: rgb(228, 228, 228);
-
+    width: 100%;
+    /* position:absolute; */
+   /* bottom:0; */
 }
 .footer-grid{
     display: grid;
@@ -157,6 +160,16 @@ footer{
 #logoutadmin:hover{
     background-color: teal;
     color: white;
+}
+
+#search-btn{
+    width: 56px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+}
+#search-btn:hover{
+    background-color: teal;
 }
 
 

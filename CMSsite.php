@@ -63,8 +63,9 @@
                 <!-- remove product form -->
                 <div id="remove-form">
                     <h1>Remove Order</h1>
-                    Order ID: <input type="text" placeholder="0pwis8ue82js9dg33ldis">
-                    <button id="remove-product">remove</button>
+                    Order ID: <input id="remove-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
+                    <button id="remove-product" onclick="remove_item()">remove</button>
+                    <p id="removed-msg"></p>
                 </div>
                 <!-- update product form -->
                 <div id="update-form">

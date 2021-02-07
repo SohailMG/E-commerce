@@ -1,3 +1,9 @@
+/**
+ * retrieving data of added item and posting it's data
+ * to a php script to be stored in database
+ */
+
+
 let addToCart_btns = document.getElementsByClassName("addbtn");
 
 for (let i = 0; i < addToCart_btns.length; i++) {
@@ -22,7 +28,7 @@ function addToCart(event) {
   let itemname = shopItem.getElementsByClassName("item-name")[0].innerHTML;
   let itemSize = shopItem.getElementsByClassName("item-size")[0].innerHTML;
   let itemPrice = shopItem.getElementsByClassName("item-price")[0].innerHTML;
-  cart_amount.style.color="red";
+  cart_amount.style.color="red"
   cart_amount.innerHTML = cart_count++;
   console.log(cart_count);
 

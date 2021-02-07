@@ -50,14 +50,14 @@ if (cmsURL.match("CMS")) {
       if (request.status === 200) {
         //Get data from server
         var responseData = request.responseText;
-        console.log(showCMSPage());
         //Add data to page
         if (responseData === "ok") {
           console.log("login successfull");
           header_wrpr.innerHTML+=logoutStr;
           showCMSPage();
         } else {
-          console.log("login unsuccessfull");
+          document.getElementById("errorMsg").innerText = "Incorrect details...Try again";
+          
           return;
         }
       } else console.log("Error communicating with server");

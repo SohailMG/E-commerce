@@ -5,8 +5,6 @@ outputHeaderNav("Perfumes");
 ?>
 <!-- website window resolution 1278 x 1940.58 -->
 <?php
-
-
 //Include libraries
 require __DIR__ . '/vendor/autoload.php';
 

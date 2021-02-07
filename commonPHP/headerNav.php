@@ -33,7 +33,7 @@ function outputHeaderNav($pageName){
         <div class="searchContainer">
             <input type="text" placeholder="Search..." id="search-box">
 
-            <div id="search-icon"><a href="search.php"><img src="Images/search.png" alt=""></a></div>
+            <div id="search-icon"><button id="search-btn" onclick="search_item()"><img src="./Images/search.png" alt=""></button></div>
         </div>
         <div id="account"><img src="Images/Account.png" alt=""><a href="Register.php">Account</a></div>
         <div id="cart"><img src="Images/Cart.png" alt=""><a href="cart.php" id="cart-amount">Cart</a></div>
@@ -90,6 +90,8 @@ function outputFooter(){
 <script src="src/account.js"></script>
 <script src="src/addtocart.js"></script>
 <script src="src/CMS-addProduct-ajax.js"></script>
+<script src="src/remove-item.js"></script>
+<script src="src/search.js"></script>
 
 </html>';
 }
