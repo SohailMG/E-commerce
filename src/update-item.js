@@ -27,7 +27,7 @@ function update_item() {
   };
 
   //Set up and send request
-  request.open("POST", "./update-product.php");
+  request.open("POST", "./CMS/update-product.php");
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(
     "id=" +

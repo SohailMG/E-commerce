@@ -10,25 +10,6 @@
                 <button id="view-btn" onclick="viewProduct()">View Products</button>
             </div>
             <div class="task-container">
-
-                <!-- add product form  -->
-                <div id="add-form">
-                    <h1>Product Details</h1>
-                    Name: <input type="text" id="addform-Name">
-                    Price: <input type="text" id="addform-Price">
-                    Quantity: <input type="text" id="addform-Quantity">
-                    Size: <input type="text" id="addform-Size" placeholder="e.g 50ml">
-                    Image: <input type="text" id="addform-Image" placeholder="e.g Images/Boss.png">
-                    KeyWords: <input type="text" id="addform-keywords" placeholder="mens black cheap..etc">
-                    <p id="errorMsg"></p>
-                    <button id="addProduct" onclick="addNewProduct()">Add</button>
-                </div>
-
-                <div id="added-item-info">
-                </div>
-
-
-
                 <table id="table">
                     <caption>Products Database</caption>
                     <thead>
@@ -60,6 +41,26 @@
                         ?>
                     </tbody>
                 </table>
+
+                <!-- add product form  -->
+                <div id="add-form">
+                    <h1>Product Details</h1>
+                    Name: <input type="text" id="addform-Name">
+                    Price: <input type="text" id="addform-Price">
+                    Quantity: <input type="text" id="addform-Quantity">
+                    Size: <input type="text" id="addform-Size" placeholder="e.g 50ml">
+                    Image: <input type="text" id="addform-Image" placeholder="e.g Images/Boss.png">
+                    KeyWords: <input type="text" id="addform-keywords" placeholder="mens black cheap..etc">
+                    <p id="errorMsg"></p>
+                    <button id="addProduct" onclick="addNewProduct()">Add</button>
+                </div>
+
+                <div id="added-item-info">
+                </div>
+
+
+
+
                 <!-- remove product form -->
                 <div id="remove-form">
                     <h1>Remove Order</h1>
@@ -72,10 +73,10 @@
                     <h1>Update Product</h1>
                     ID: <input id="update-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
                     <button id="view-product">View</button>
-                    Name: <input  id="update-name" type="text">
+                    Name: <input id="update-name" type="text">
                     Price: <input id="update-price" type="text" placeholder="33.30">
                     Stock: <input id="update-stock" type="text" placeholder="10">
-                    Size: <input  id="update-size" type="text" placeholder="50ml">
+                    Size: <input id="update-size" type="text" placeholder="50ml">
                     <button id="update-product" onclick="update_item()">Change</button>
                 </div>
             </div>

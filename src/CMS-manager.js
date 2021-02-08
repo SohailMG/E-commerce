@@ -14,7 +14,7 @@ if (cmsURL.match("CMS")) {
     document.getElementById("add-form").style.display = "block";
     document.getElementById("remove-form").style.display = "none";
     document.getElementById("update-form").style.display = "none";
-    document.getElementById("table").style.display = "none";
+    document.getElementById("table").style.display = "block";
     
     // changing backgroun color of selected option
     document.getElementById("add-btn").style.backgroundColor = "rgb(1, 41, 44)";

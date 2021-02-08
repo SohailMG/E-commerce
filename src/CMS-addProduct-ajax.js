@@ -46,13 +46,15 @@ function addNewProduct() {
       if (request.status === 200) {
         if (request.responseText != "failed") {
           let added_item_form = document.getElementById("added-item-info");
-          added_item_form.style.display="block";
+          add_to_table(request.responseText);
+
+          // added_item_form.style.display="block";
           added_item_form.innerHTML = request.responseText;
         }
       } else console.log("Error communicating with server");
     };
     // sending a post request to add product data as a json string
-    request.open("POST", "./add-product.php");
+    request.open("POST", "./CMS/add-product.php");
     request.setRequestHeader(
       "Content-type",
       "application/x-www-form-urlencoded"
@@ -66,4 +68,14 @@ function addNewProduct() {
     element.value = "";
     document.getElementById("errorMsg").innerText = "";
   });
+}
+
+/**
+ * adds a new row to the table of the added
+ * item
+ * @param {HTMLElement} new_item 
+ */
+function add_to_table(new_item) {
+  var table = document.getElementById("table").getElementsByTagName("tbody")[0];
+  table.innerHTML += new_item;
 }

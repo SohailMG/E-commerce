@@ -26,7 +26,7 @@ function post_id(){
       };
     
       //Set up and send request
-      request.open("POST", "./removeProduct.php");
+      request.open("POST", "./CMS/removeProduct.php");
       request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       request.send("id=" + remove_id.value);
 
