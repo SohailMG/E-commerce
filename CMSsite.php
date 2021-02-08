@@ -70,13 +70,13 @@
                 <!-- update product form -->
                 <div id="update-form">
                     <h1>Update Product</h1>
-                    ID: <input type="text" placeholder="0pwis8ue82js9dg33ldis">
+                    ID: <input id="update-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
                     <button id="view-product">View</button>
-                    Name: <input type="text">
-                    Price: <input type="text" placeholder="33.30">
-                    Stock: <input type="text" placeholder="10">
-                    Size: <input type="text" placeholder="50ml">
-                    <button id="update-product">Change</button>
+                    Name: <input  id="update-name" type="text">
+                    Price: <input id="update-price" type="text" placeholder="33.30">
+                    Stock: <input id="update-stock" type="text" placeholder="10">
+                    Size: <input  id="update-size" type="text" placeholder="50ml">
+                    <button id="update-product" onclick="update_item()">Change</button>
                 </div>
             </div>
 

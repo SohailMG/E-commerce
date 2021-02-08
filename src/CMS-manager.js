@@ -40,7 +40,7 @@ if (cmsURL.match("CMS")) {
     document.getElementById("add-form").style.display = "none";
     document.getElementById("remove-form").style.display = "none";
     document.getElementById("update-form").style.display = "block";
-    document.getElementById("table").style.display = "none";
+    document.getElementById("table").style.display = "block";
     document.getElementById("added-item-info").style.display="none";
 
     document.getElementById("update-btn").style.backgroundColor = "rgb(1, 41, 44)";

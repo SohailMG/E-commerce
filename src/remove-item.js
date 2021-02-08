@@ -6,6 +6,7 @@ function remove_item() {
     for (let therow of table.rows) {
         for (let thecell of therow.cells) {
             if (thecell.innerText == remove_id.value) {
+                console.log(therow);
                 therow.innerHTML="";
             }
         }

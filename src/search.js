@@ -2,7 +2,6 @@
 
 function search_item() {
     post_search();
-    // location.href="search.php";
 
 
 }
@@ -14,6 +13,7 @@ function search_item(){
     request.onload = function () {
         //Check HTTP status code
         if (request.status === 200) {
+            console.log(request.responseText);
             if (URL.match("perfumes")) {
                 
                 for (var i = 0; i < results_box.length; i++) {
