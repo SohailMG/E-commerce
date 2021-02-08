@@ -12,8 +12,13 @@ outputHeaderNav("Home");
         <!-- right section has button to navigate to products -->
         <div id="right-section">
             <p>Explore different scenets</p>
-            <button id="shopnow">Shop Now</button>
+            <button onclick="shopNow()"  id="shopnow">Shop Now</button>
         </div>
+        <script>
+        function shopNow(){
+            document.location="perfumes.php";
+        }
+        </script>
     </section>
 
 

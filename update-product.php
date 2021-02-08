@@ -21,25 +21,31 @@ $replaceCriteria = [
     "_id" => new MongoDB\BSON\ObjectID($id)
 ];
 
+//Echo result back to user
+$item = $db->Products->findOne(['_id' => new MongoDB\BSON\ObjectID($id)]);
+
+
+
 //Data to replace
-$customerData = [
+$productData = [
     "Name" => $name,
     "Price" => $price,
     "Quantity" => $stock,
-    "size" => $size
+    "size" => $size,
+    "img_url" => $item['img_url'],
+    "KeyWords" => $item['KeyWords']
 ];
 
 //Replace customer data for this ID
-$updateRes = $db->Products->replaceOne($replaceCriteria, $customerData);
+$updateRes = $db->Products->replaceOne($replaceCriteria, $productData);
 
-//Echo result back to user
 if ($updateRes->getModifiedCount() == 1) {
-    $item = $db->Products->findOne(['_id' => new MongoDB\BSON\ObjectID($id)]);
     echo ' <td>' . $id . '</td>';
-    echo ' <td>' . $item['Name'] . '</td>';
-    echo ' <td>£'. $item['Price'] . '</td>';
-    echo ' <td>' . $item['size'] . '</td>';
-    echo ' <td>' . $item['Quantity'] . '</td>';
+    echo ' <td>' . $name . '</td>';
+    echo ' <td>£'. $price . '</td>';
+    echo ' <td>' . $size. '</td>';
+    echo ' <td>' . $stock. '</td>';
 } else {
     echo 'Item replacement error.';
 }
+
