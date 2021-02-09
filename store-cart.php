@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 //Include libraries
 require __DIR__ . '/vendor/autoload.php';
 
@@ -15,12 +16,28 @@ $itemPrice = filter_input(INPUT_POST, 'itemPrice', FILTER_SANITIZE_STRING);
 $itemSize  = filter_input(INPUT_POST, 'itemSize', FILTER_SANITIZE_STRING);
 $itemImg   = filter_input(INPUT_POST, 'itemImg', FILTER_SANITIZE_STRING);
 
-// array of item 
-$cartData = [
-    "Name"  => $itemName,
-    "Price" => $itemPrice,
-    "Size"  => $itemSize,
-    "Img_url" => $itemImg
-];
-// storing item data in cart collection
-$cart_collection->insertOne($cartData);
+
+if( array_key_exists("customer", $_SESSION) ){
+    $customer_id =  $_SESSION["customerID"];
+    // array of item 
+    $cartData = [
+        "cust_id" => $customer_id,
+        "Name"  => $itemName,
+        "Price" => $itemPrice,
+        "Size"  => $itemSize,
+        "Img_url" => $itemImg
+    ];
+    // storing item data in cart collection
+    $cart_collection->insertOne($cartData);
+}else{
+
+    $cartData = [
+        "Name"  => $itemName,
+        "Price" => $itemPrice,
+        "Size"  => $itemSize,
+        "Img_url" => $itemImg
+    ];
+    // storing item data in cart collection
+    $cart_collection->insertOne($cartData);
+
+}

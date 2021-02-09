@@ -92,6 +92,7 @@ function outputFooter(){
 <script src="src/remove-item.js"></script>
 <script src="src/search.js"></script>
 <script src="src/update-item.js"></script>
+<script src="src/basket.js"></script>
 
 </html>';
 }
