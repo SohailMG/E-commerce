@@ -13,31 +13,22 @@ outputHeaderNav("Register");
         </div>
         <h1 id="formtitle">Sign In</h1>
         <div id="sign-up">
-            First Name :<input type="text">
-            Last Name :<input name="password" type="text">
-            Email : <input type="text">
-            Number: <input type="text">
-            Password: <input type="text">
-            <button id="signupBtn">Submit</button>
+            First Name :<input id="customer-fname" type="text">
+            Last Name :<input id="customer-lname" name="password" type="text">
+            Email : <input id="customer-email" type="text">
+            Number: <input id="customer-number" type="text">
+            Password: <input id="customer-password" type="text">
+            <button id="signupBtn" onclick="sing_up()">Submit</button>
         </div>
         <div id="sign-in">
-            Username : <input type="text">
-            Password : <input type="text">
-            <button id="signinBtn">Login</button>
+            Email : <input type="text"    id="login-email">
+            Password : <input type="text" id="login-password">
+            <p id="error-msg"></p>
+            <button id="signinBtn" onclick="login_customer()">Login</button>
         </div>
     </div>
-        <div id="account-page">
-            <div id="account-container">
-            <h1>Account Details</h1>
-            first Name: <input type="text" name="name"   placeholder="john"  >
-            last Name: <input type="text" name="name"    placeholder="wick"  >
-            Email : <input type="text" name="email"      placeholder="john@wick.com"  >
-            Number : <input type="text" name="password"  placeholder="0792836123"  >
-            Password : <input type="text" name="password"placeholder="pass123"  >
-            <button id="change-details">Change</button>
-            </div>
 
-        </div>
+    </div>
 
 </main>
 
