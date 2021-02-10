@@ -6,7 +6,7 @@ outputHeaderNav("Cart");
 <!-- website window resolution 1278 x 1940.58 -->
 
 
-<div id="cart-container">
+<div class="cart-container">
     <?php
 
     session_start();
@@ -19,6 +19,9 @@ outputHeaderNav("Cart");
     $cart_collection = $db->cart;
 
 
+    if ($cart_collection->count() == 0) {
+        echo '<h1>Your Bag is emtpy...</h1>';
+    }else
     if (array_key_exists("customer", $_SESSION)) {
         $customer_id =  $_SESSION["customerID"];
 
@@ -32,28 +35,28 @@ outputHeaderNav("Cart");
 
         foreach ($customer_basket as $item) {
 
-            echo ' <div id="order-details">';
-            echo ' <div id="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
-            echo ' <p id="order-name">Product : ' . $item['Name'] . '</p>';
-            echo ' Quantity:<input id="order-quantity" placeholder="1" type="text">';
-            echo ' <button id="remove-item">Remove</button>';
+            echo ' <div class="order-details">';
+            echo ' <div class="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
+            echo ' <p class="order-name">Product : ' . $item['Name'] . '</p>';
+            echo ' Quantity:<input class="order-quantity" placeholder="1" type="text">';
+            echo ' <button class="remove-item">Remove</button>';
+            echo ' <p class="order-price">Price : ' . $item['Price'] . '</p>';
             
             echo ' </div>';
         }
-        echo ' <p id="order-price">Totoal : ' . $item['Price'] . '</p>';
     } else {
         $customer_basket = $cart_collection->find();
         echo '<h1>Your Bag...</h1>';
         foreach ($customer_basket as $item) {
-            echo ' <div id="order-details">';
-            echo ' <div id="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
-            echo ' <p id="order-name">Product : ' . $item['Name'] . '</p>';
-            echo ' Quantity:<input id="order-quantity" placeholder="1" type="text">';
-            echo ' <button id="remove-item">Remove</button>';
+            echo ' <div class="order-details">';
+            echo ' <div class="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
+            echo ' <p class="order-name">Product : ' . $item['Name'] . '</p>';
+            echo ' Quantity:<input class="order-quantity" placeholder="1" type="text">';
+            echo ' <button class="remove-item">Remove</button>';
+            echo ' <p class="order-price">Price : ' . $item['Price'] . '</p>';
             
             echo ' </div>';
         }
-        echo ' <p id="order-price">Totoal : ' . $item['Price'] . '</p>';
     }
     ?>
 </div>

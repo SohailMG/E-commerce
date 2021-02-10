@@ -18,12 +18,12 @@ $customers = $mongoClient->www->Customers;
 
         echo ' <div id="account-container">';
         echo ' <h1>Account Details</h1>';
-        echo ' first Name: <input type="text" name="name" placeholder="' . $customer['firstName'] . '">';
-        echo ' last Name: <input type="text" name="name" placeholder="' . $customer['lastName']. '">';
-        echo ' Email : <input type="text" name="email" placeholder="' . $customer['email']. '">';
-        echo ' Number : <input type="text" name="password" placeholder="' . $customer['password'] . '">';
-        echo ' Password : <input type="text" name="password" placeholder="' . $customer['number']. '">';
-        echo ' <button id="change-details" onclick="change_details()">Change</button>';
+        echo ' first Name: <input id="cust-fname" type="text" name="name" value="' . $customer['firstname'] . '">';
+        echo ' last Name: <input  id="cust-lname" type="text" name="name" value="' . $customer['lastname']. '">';
+        echo ' Email : <input     id="cust-email" type="text" name="email" value="' . $customer['email']. '">';
+        echo ' Number : <input    id="cust-num" type="text" name="password" value="' . $customer['number'] . '">';
+        echo ' Password : <input  id="cust-pass" type="text" name="password" value="' . $customer['password']. '">';
+        echo ' <button id="change-details" onclick="changeDetails()">Change</button>';
         echo ' <button id="log-out-customer" onclick="log_out()">Logout</button>';
         echo ' </div>';
 

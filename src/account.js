@@ -1,9 +1,7 @@
 let URL = window.location.href;
 
 if (URL.match("Register")) {
- 
   window.onload = check_customer_logged;
-
 
   let switch_signIn = document.getElementById("show-signIn");
   let switch_signUp = document.getElementById("show-signup");
@@ -40,9 +38,9 @@ if (URL.match("Register")) {
   // checkout button to payment page
   let checkout_btn = document.getElementById("check-out");
 
-  checkout_btn.onclick = () => {
-    location.href = "payment.php";
-  };
+  // checkout_btn.onclick = () => {
+  //   location.href = "payment.php";
+  // };
 }
 
 function sing_up() {
@@ -69,8 +67,8 @@ function sing_up() {
     return;
   } else {
     let customer_data = {
-      firstName: cust_fname.value,
-      lastName: cust_lname.value,
+      firstname: cust_fname.value,
+      lastname: cust_lname.value,
       email: cust_email.value,
       password: cust_pass.value,
       number: cust_num.value,
@@ -94,7 +92,7 @@ function sing_up() {
   }
 }
 /**
- * posts login details to php scripts and depening 
+ * posts login details to php scripts and depening
  * on request the account page is displayed and user is logged
  */
 function login_customer() {
@@ -133,7 +131,6 @@ function check_customer_logged() {
   request.onload = function () {
     if (request.responseText != "not logged") {
       account_page.innerHTML = request.responseText;
-      
     } else {
       console.log("not logged");
     }
@@ -143,16 +140,50 @@ function check_customer_logged() {
   request.send();
 }
 
-function log_out(){
-      //Create event handler that specifies what should happen when server responds
-      request.onload = function () {
-        document.location="Register.php";
-      };
-  
-      //Set up and send request
-      request.open("GET", "./Sessions/logout.php");
-      request.send();
+function log_out() {
+  //Create event handler that specifies what should happen when server responds
+  request.onload = function () {
+    document.location = "Register.php";
+  };
 
+  //Set up and send request
+  request.open("GET", "./Sessions/logout.php");
+  request.send();
 }
 
+function changeDetails() {
+  let cust_fname = document.getElementById("cust-fname");
+  let cust_lname = document.getElementById("cust-lname");
+  let cust_email = document.getElementById("cust-email");
+  let cust_pass = document.getElementById("cust-pass");
+  let cust_num = document.getElementById("cust-num");
+  let account_page = document.getElementById("register-form");
+  
 
+  let fitstname = cust_fname.value;
+  let lastname = cust_lname.value;
+  let email = cust_email.value;
+  let pass = cust_pass.value;
+  let number = cust_num.value;
+
+  if (request.status === 200) {
+    console.log(request.responseText);
+    account_page.innerHTML = request.responseText;
+  } else console.log("Error communicating with server");
+
+  //Set up and send request
+  request.open("POST", "./changeCustomerDetails.php");
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  request.send(
+    "firstname=" +
+      fitstname +
+      "&lastname=" +
+      lastname +
+      "&email=" +
+      email +
+      "&password=" +
+      pass +
+      "&number=" +
+      number
+  );
+}

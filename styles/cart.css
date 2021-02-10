@@ -1,26 +1,26 @@
 
 
 /* styling of basket */
-#cart-container{
+.cart-container{
     width: 600px;
     margin-left: 30%;
     margin-top: 5%;
 }
-#order-details {
+.order-details {
     width: 600px;
-    height: 300px;
+    height: 320px;
     border: 1px solid black;
     
 }
 /* image of the added item */
-#order-img {
+.order-img {
     background-image: url("../Images/savage.png");
     width: 200px;
     height: 200px;
     border: 1px solid black;
 
 }
-#order-details > input {
+.order-details > input {
     width: 30px;
     height: 20px;
 }
