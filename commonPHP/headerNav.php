@@ -14,6 +14,7 @@ function outputHTMLtags(){
         <link rel="stylesheet" href="styles/CMS.css">
         <link rel="stylesheet" href="styles/register.css">
         <link rel="stylesheet" href="styles/cart.css">
+        <link rel="stylesheet" href="styles/orders.css">
         <title>PerfumeFest</title>
     </head>  
     <body>';
@@ -93,6 +94,7 @@ function outputFooter(){
 <script src="src/search.js"></script>
 <script src="src/update-item.js"></script>
 <script src="src/basket.js"></script>
+<script src="src/checkOut.js"></script>
 
 </html>';
 }

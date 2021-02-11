@@ -1,0 +1,110 @@
+#orders-wrapper{
+    width: 600px;
+    margin-left: 30%;
+    margin-top: 5%;
+    border: 1px solid black;
+
+}
+#order-info > div{
+
+    width: 200px;
+    height: 200px;
+    font-weight: bold;
+    
+}
+#order-info > div > p{
+    color: rgb(170, 7, 7);
+    font-weight: lighter;
+    
+}
+#order-info{
+    display: flex;
+    width: 600px;
+    height: 200px;
+    border: 0.5px solid black;
+}
+
+
+/* payment page */
+
+.pay-form{
+    width: 600px;
+    height: 400px;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    border: 1px solid black;
+
+}
+.address{
+    width: 400px;
+    margin-left: 10px;
+    margin-top: 20%;
+}
+.address > input:not(:last-child){
+    width: 400px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.219);
+}
+#postcode{
+    margin-top: 10px;
+    background-color: rgba(128, 128, 128, 0.295);
+    height: 30px;
+    border: none;
+}
+.pay-form > button{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(180, 179, 102);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px grey;
+    margin-left: 40%;
+    margin-top: 55px;
+}
+.pay-form > button:hover{
+    background-color: black;
+    color: white;
+}
+
+.checkout-btn{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: teal;
+    color: white;
+}
+.checkout-btn:hover{
+    background-color: grey;
+    color: white;
+}
+#order-confirmation{
+    margin-left: 29%;
+    margin-top: 7%;
+    margin-bottom: 4%;
+    width: 700px;
+}
+#order-confirmation > h1{
+    color: green;
+
+
+}
+#orderDetails{
+    display: flex;
+    width: 700px;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    background-color: rgba(206, 206, 206, 0.377);
+    
+}
+#orderDetails > div{
+    width: 300px;
+    font-size:bold;
+}
+#orderDetails > div > p{
+    font-weight: lighter;
+    color: dimgrey;;
+    
+}

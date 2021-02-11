@@ -38,12 +38,14 @@ outputHeaderNav("Cart");
             echo ' <div class="order-details">';
             echo ' <div class="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
             echo ' <p class="order-name">Product : ' . $item['Name'] . '</p>';
-            echo ' Quantity:<input class="order-quantity" placeholder="1" type="text">';
+            echo ' Quantity:<input class="order-quantity" value="1" type="text">';
             echo ' <button class="remove-item">Remove</button>';
             echo ' <p class="order-price">Price : ' . $item['Price'] . '</p>';
             
             echo ' </div>';
         }
+        echo ' <p class="order-total">Total : </p>';
+    echo ' <button class="checkout-btn" onclick="gotoPayment()">Check-out</button>';
     } else {
         $customer_basket = $cart_collection->find();
         echo '<h1>Your Bag...</h1>';
@@ -51,13 +53,17 @@ outputHeaderNav("Cart");
             echo ' <div class="order-details">';
             echo ' <div class="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
             echo ' <p class="order-name">Product : ' . $item['Name'] . '</p>';
-            echo ' Quantity:<input class="order-quantity" placeholder="1" type="text">';
+            echo ' Quantity:<input class="order-quantity" value="1" type="text">';
             echo ' <button class="remove-item">Remove</button>';
             echo ' <p class="order-price">Price : ' . $item['Price'] . '</p>';
             
             echo ' </div>';
         }
+        echo ' <p class="order-total">Total : </p>';
+    echo ' <button class="checkout-btn" onclick="gotoPayment()">Check-out</button>';
     }
+    
+    
     ?>
 </div>
 <div class="suggested-items">

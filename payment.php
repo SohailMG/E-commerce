@@ -4,20 +4,33 @@ outputHTMLtags();
 outputHeaderNav("Payment");
 ?>
 <!-- website window resolution 1278 x 1940.58 -->
-<main>
 
-    <div class="pay-form">
-        <div class="address">
-            <p>Enter delivery details</p>
-            Street : <input type="text" name="" id="street">
-            City : <input type="text" name="" id="city">
-            Postcode: <input type="text" name="" id="postcode">
+<div class="order-container">
+<div id="orders-wrapper">
+
+    <div id="order-info">
+        <div id="order-img"><img src="" alt=""></div>
+        <div id="order-name">Name:<p></p>
         </div>
-        <button>Pay</button>
-
+        <div id="order-price">Price:<p></p>
+        </div>
+        <div id="order-quantity">Quantity:<p></p>
+        </div>
     </div>
-</main>
+</div>
 
+<div class="pay-form">
+    <div class="address">
+        <p>Enter delivery details</p>
+        Street : <input type="text" name="" id="street">
+        City : <input type="text" name="" id="city">
+        Postcode: <input type="text" name="" id="postcode">
+    </div>
+    <button onclick="storeAddressDetails()">Pay</button>
+
+</div>
+
+</div>
 <?php
 outputFooter();
 ?>
