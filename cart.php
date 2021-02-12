@@ -59,6 +59,7 @@ outputHeaderNav("Cart");
             
             echo ' </div>';
         }
+        echo ' <p id="checkoutMsg"></p>';
         echo ' <p class="order-total">Total : </p>';
     echo ' <button class="checkout-btn" onclick="gotoPayment()">Check-out</button>';
     }

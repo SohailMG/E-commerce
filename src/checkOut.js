@@ -52,5 +52,12 @@ function showOrderConfirmation(orderConfirmation){
 }
 }
 function gotoPayment() {
-  location.href = "payment.php";
+  let errorMsg = document.getElementById('checkoutMsg');
+  if (localStorage.getItem('customerLogged')) {
+    location.href = "payment.php";
+    
+  }else{
+    errorMsg.innerHTML="Must be logged first"
+
+  }
 }

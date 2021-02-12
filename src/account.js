@@ -114,6 +114,7 @@ function login_customer() {
         error_msg.innerHTML = request.responseText;
         return;
       } else {
+        localStorage.setItem('customerLogged',true);
         account_page.innerHTML = request.responseText;
       }
     } else console.log("Error communicating with server");
@@ -143,6 +144,7 @@ function check_customer_logged() {
 function log_out() {
   //Create event handler that specifies what should happen when server responds
   request.onload = function () {
+    localStorage.removeItem('customerLogged');
     document.location = "Register.php";
   };
 

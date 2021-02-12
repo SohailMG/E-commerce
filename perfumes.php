@@ -18,6 +18,18 @@ $db = $mongoClient->www;
 $cursor = $db->Products->find();
 
 //outputting a grid wrapper and a wrapper for all products
+
+echo '<div id="sort-products">
+      <form id="sort-options">
+      <select id="select-options" size="1" name="pet">
+      <option value="noSort">None</option>
+      <option value="PriceAsc">Price-[low-high]</option>
+      <option value="PriceDec">Price-[high-low]</option>
+      <option value="AtoZ">Order from[A-Z]</option>
+      </select>
+      </form>
+      <button onclick="sortItems()">Sort</button>
+      </div>';
 echo '<div class="products-wrapper">';
 echo '<div class="gridwrapper">';
 // looping through arrays of data from mongodb and outputing specific product values
