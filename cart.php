@@ -68,13 +68,6 @@ outputHeaderNav("Cart");
     ?>
 </div>
 <div class="suggested-items">
-    <p>You may also like</p>
-    <div id="suggesteds">
-        <div id="item1"></div>
-        <div id="item2"></div>
-        <div id="item3"></div>
-        <div id="item4"></div>
-    </div>
 </div>
 
 <?php

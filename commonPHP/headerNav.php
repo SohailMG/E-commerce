@@ -96,6 +96,7 @@ function outputFooter(){
 <script src="src/basket.js"></script>
 <script src="src/checkOut.js"></script>
 <script src="src/sortItems.js"></script>
+<script src="src/show-recommended.js" type="module"></script>
 
 </html>';
 }

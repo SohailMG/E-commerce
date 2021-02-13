@@ -42,8 +42,8 @@
 }
 /* suggested items  styles*/
 .suggested-items{
-    width: 800px;
-    height: 250px;
+    width: 807px;
+    height: 342px;
     border: 1px solid black;
     margin-top: 7%;
     margin-left: 23%;
@@ -55,19 +55,7 @@
 
 }
 #suggesteds > div{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height:  291px;
     border: 1px solid black;
-}
-#item1{
-    background-image: url(../Images/doir.png);
-}
-#item2{
-    background-image: url(../Images/1million.png);
-}
-#item3{
-    background-image: url(../Images/chanel.png);
-}
-#item4{
-    background-image: url(../Images/creed.png);
 }

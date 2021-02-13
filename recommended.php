@@ -1,10 +1,9 @@
 <?php
 
-
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->www;
-$search_string = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
+$search_string = filter_input(INPUT_POST, 'topKeyword', FILTER_SANITIZE_STRING);
 
 //Create a PHP array with our search criteria
 $findCriteria = [
@@ -12,13 +11,16 @@ $findCriteria = [
 ];
 
 //Find all of the customers that match  this criteria
-$cursor = $db->Products->find($findCriteria);
+$cursor = $db->Products->find($findCriteria, ['limit' => 4]);
 
 //Output the results
-echo '<p>Search Results.....</p>';
-echo '<div class="gridwrapper">';
+
 // looping through arrays of data from mongodb and outputing specific product values
+
+echo '    <p>Recommended</p>';
+echo '  <div id="suggesteds">';
 foreach ($cursor as $product) {
+
 
     echo ' <div class="perfume-data">';
     echo ' <div class="item-picture"><img class="item-img" src="./' . $product['img_url'] . '" alt=""></div>';
@@ -28,5 +30,4 @@ foreach ($cursor as $product) {
     echo ' <button class="addbtn" >Add to Cart</button>
               </div>';
 }
-echo '</div>
-</div>';
+echo '    </div>';

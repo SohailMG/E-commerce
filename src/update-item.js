@@ -8,6 +8,7 @@ function update_item() {
   let updated_price = document.getElementById("update-price");
   let updated_size = document.getElementById("update-size");
   let updated_stock = document.getElementById("update-stock");
+  let updateMsg = document.getElementById("update-msg");
 
   let formelms = [
     updated_stock,
@@ -16,31 +17,46 @@ function update_item() {
     updated_price,
     updated_size,
   ];
-  request.onload = function () {
-    //Check HTTP status code
-    if (request.status === 200) {
-      show_updated(request.responseText);
-      formelms.forEach((element) => {
-        element.value = "";
-      });
-    } else console.log("Error communicating with server");
-  };
 
-  //Set up and send request
-  request.open("POST", "./CMS/update-product.php");
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(
-    "id=" +
-      updated_id.value +
-      "&name=" +
-      updated_name.value +
-      "&price=" +
-      updated_price.value +
-      "&size=" +
-      updated_size.value +
-      "&stock=" +
-      updated_stock.value
-  );
+  if (
+    updated_stock.value == "" ||
+    updated_id.value == "" ||
+    updated_name.value == "" ||
+    updated_price.value == "" ||
+    updated_size.value == ""
+  ) {
+    updateMsg.innerHTML = "Fill all fields";
+    updateMsg.style.color = "red";
+  } else {
+    request.onload = function () {
+      //Check HTTP status code
+      if (request.status === 200) {
+        show_updated(request.responseText);
+        formelms.forEach((element) => {
+          element.value = "";
+        });
+      } else console.log("Error communicating with server");
+    };
+
+    //Set up and send request
+    request.open("POST", "./CMS/update-product.php");
+    request.setRequestHeader(
+      "Content-type",
+      "application/x-www-form-urlencoded"
+    );
+    request.send(
+      "id=" +
+        updated_id.value +
+        "&name=" +
+        updated_name.value +
+        "&price=" +
+        updated_price.value +
+        "&size=" +
+        updated_size.value +
+        "&stock=" +
+        updated_stock.value
+    );
+  }
 }
 
 /**

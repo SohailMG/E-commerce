@@ -1,7 +1,7 @@
 
 if (URL.match('cart')) {
 
-    window.onload = updateCartTotal;
+    // window.onload = updateCartTotal;
 
     var removeCartItem = document.getElementsByClassName('remove-item');
     console.log(removeCartItem);

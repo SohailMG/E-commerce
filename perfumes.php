@@ -3,6 +3,9 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Perfumes");
 ?>
+</div>
+<div class="suggested-items">
+</div>
 <!-- website window resolution 1278 x 1940.58 -->
 <?php
 //Include libraries
@@ -45,7 +48,9 @@ foreach ($cursor as $product) {
 }
 echo '</div>
 </div>';
+
 ?>
+
 <?php
 outputFooter();
 ?>
