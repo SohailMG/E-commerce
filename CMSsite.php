@@ -41,6 +41,34 @@
                         ?>
                     </tbody>
                 </table>
+                <table id="customers-table">
+                    <caption>Customers Database</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        //Include libraries
+                        require __DIR__ . '/vendor/autoload.php';
+                        $mongoClient = (new MongoDB\Client);
+                        $db = $mongoClient->www;
+                        $cursor = $db->Customers->find();
+                        foreach ($cursor as $product) {
+
+                            echo ' <tr>';
+                            echo ' <td>' . $product['_id'] . '</td>';
+                            echo ' <td>' . $product['firstname'] . '</td>';
+                            echo ' <td>'. $product['email'] . '</td>';
+                            echo ' </tr>';
+                        }
+                        ?>
+                    </tbody>
+                </table>
+
 
                 <!-- add product form  -->
                 <div id="add-form">
@@ -64,8 +92,11 @@
                 <!-- remove product form -->
                 <div id="remove-form">
                     <h1>Remove Order</h1>
+                    Customer ID: <input id="view-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
+                    <button id="remove-product" onclick="viewOrders()">View Orders</button>
                     Order ID: <input id="remove-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
-                    <button id="remove-product" onclick="remove_item()">remove</button>
+                    <button id="remove-product" onclick="remove_item()">Remove</button>
+                    <button id="view-customers" onclick="viewCustomers()">View Customers</button>
                     <p id="removed-msg"></p>
                 </div>
                 <!-- update product form -->

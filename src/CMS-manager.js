@@ -15,6 +15,7 @@ if (cmsURL.match("CMS")) {
     document.getElementById("remove-form").style.display = "none";
     document.getElementById("update-form").style.display = "none";
     document.getElementById("table").style.display = "block";
+    document.getElementById("customers-table").style.display = "none";
     
     // changing backgroun color of selected option
     document.getElementById("add-btn").style.backgroundColor = "rgb(1, 41, 44)";
@@ -27,7 +28,8 @@ if (cmsURL.match("CMS")) {
     document.getElementById("add-form").style.display = "none";
     document.getElementById("remove-form").style.display = "block";
     document.getElementById("update-form").style.display = "none";
-    document.getElementById("table").style.display = "block";
+    document.getElementById("customers-table").style.display = "block";
+    document.getElementById("table").style.display = "none";
     document.getElementById("added-item-info").style.display="none";
 
     document.getElementById("remove-btn").style.backgroundColor = "rgb(1, 41, 44)";
@@ -41,6 +43,7 @@ if (cmsURL.match("CMS")) {
     document.getElementById("remove-form").style.display = "none";
     document.getElementById("update-form").style.display = "block";
     document.getElementById("table").style.display = "block";
+    document.getElementById("customers-table").style.display = "none";
     document.getElementById("added-item-info").style.display="none";
 
     document.getElementById("update-btn").style.backgroundColor = "rgb(1, 41, 44)";
@@ -54,6 +57,7 @@ if (cmsURL.match("CMS")) {
     document.getElementById("remove-form").style.display = "none";
     document.getElementById("update-form").style.display = "none";
     document.getElementById("table").style.display = "block";
+    document.getElementById("customers-table").style.display = "none";
     document.getElementById("added-item-info").style.display="none";
 
     document.getElementById("view-btn").style.backgroundColor = "rgb(1, 41, 44)";

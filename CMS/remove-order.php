@@ -10,13 +10,17 @@ $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->www;
 
 //Extract ID from POST data
+
+
+
 $item_id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+
 
 //Build PHP array with delete criteria 
 $deleteCriteria = [
     "_id" => new MongoDB\BSON\ObjectID($item_id)
 ];
-$deleteRes = $db->Products->deleteOne($deleteCriteria);
+$deleteRes = $db->orders->deleteOne($deleteCriteria);
     
 if($deleteRes->getDeletedCount() == 1){
     echo 'Item: '. $item_id .' has been deleted successfully.';

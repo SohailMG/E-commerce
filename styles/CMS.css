@@ -108,15 +108,20 @@
 
 }
 #add-form > button{
-    width: 70px;
+    width: 110px;
     height: 30px;
-    background-color: cadetblue;
-    color: black;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px black;
+    background-color: teal;
+    color: white;
+    margin-top: 10px;
     margin-left: 67px;
     margin-top: 31px;
+}
+#add-form > button:hover {
+    background-color: white;
+    color: black;
+    
+    
 }
 #added-item-info{
     border: none;
@@ -183,6 +188,37 @@
     color: white;
     background-color:rgb(173, 173, 173);
 }
+/* customers table */
+#customers-table{
+    text-align: center;
+    display: none;
+    position: absolute;
+    border:1px solid #C0C0C0;
+    border-collapse:collapse;
+    margin-left: 28%;
+
+}
+#customers-table th {
+    color: black;
+    width: 120px;
+    border:1px solid #C0C0C0;
+    padding:5px;
+    background:rgb(255, 229, 174);
+}
+#customers-table td {
+    background-color: white;
+    /* color: rgb(0, 0, 0); */
+    border:1px solid #C0C0C0;
+    padding:5px;
+    /* width: 100px;
+    height: 300px; */
+}
+#customers-table caption{
+    padding-top: 10px;
+    color: white;
+    background-color:rgb(173, 173, 173);
+}
+
 
 /* remove product */
 #remove-form{
@@ -203,15 +239,39 @@
 
 }
 #remove-form > button{
-    width: 70px;
+    width: 110px;
     height: 30px;
-    background-color: cadetblue;
-    color: black;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px black;
+    background-color: teal;
+    color: white;
+    margin-top: 10px;
     margin-left: 67px;
     margin-top: 31px;
+}
+#remove-form > button:hover {
+    background-color: white;
+    color: black;
+    
+    
+}
+#update-form> button{
+    width: 110px;
+    height: 30px;
+    border: none;
+    background-color: teal;
+    color: white;
+    margin-top: 10px;
+    margin-left: 67px;
+    margin-top: 31px;
+}
+#update-form > button:hover {
+    background-color: white;
+    color: black;
+    
+    
+}
+#view-customers{
+    display: none;
 }
 
 /* update product */
@@ -232,7 +292,7 @@
     margin-top: 10px;
 
 }
-#update-product{
+/* #update-product{
     width: 70px;
     height: 30px;
     background-color: cadetblue;
@@ -242,8 +302,8 @@
     box-shadow: 0 0 10px black;
     margin-left: 67px;
     margin-top: 31px;
-}
-#view-product{
+} */
+/* #view-product{
     margin-left: 63%;
     margin-top: 10px;
     width: 70px;
@@ -253,4 +313,4 @@
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px black;
-}
+} */
