@@ -8,7 +8,7 @@ let recommender = new Recommender();
                 because search() is not visible outside the module. */
 
 //Display recommendation
-if (!URL.match(/payment|Register/)) {
+if (!URL.match(/payment|perfumes|Register/)) {
   document.getElementById("search-btn").onclick = search;
   window.onload = showRecommendation;
 

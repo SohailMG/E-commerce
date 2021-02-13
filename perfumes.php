@@ -3,9 +3,9 @@ include_once('commonPHP/headerNav.php');
 outputHTMLtags();
 outputHeaderNav("Perfumes");
 ?>
-</div>
+<!-- </div>
 <div class="suggested-items">
-</div>
+</div> -->
 <!-- website window resolution 1278 x 1940.58 -->
 <?php
 //Include libraries
