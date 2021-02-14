@@ -1,22 +1,23 @@
-//Global variables
 
-//Check login when page loads
+
 let cmsURL = location.href;
 
 let request = new XMLHttpRequest();
 
+// checking if current page is CMS.php
 if (cmsURL.match("CMS")) {
   window.onload = checkLogin();
 
-  //Checks whether user is logged in.
+  //Checks whether admin is logged in.
   function checkLogin() {
       let logoutStr = '<button id="logoutadmin" onclick="logoutadmin()">Logout</button>'
       let header_wrpr = document.getElementById("header-wrapper");
-    //Create event handler that specifies what should happen when server responds
+    // displays CMS site page when server respons with ok
     request.onload = function () {
       if (request.responseText === "ok") {
         showCMSPage();
 
+        // adds logout button to the header
         header_wrpr.innerHTML+=logoutStr;
         sessionStorage.setItem("adminlogged", true);
         localStorage.setItem("adminlogged", true);
@@ -30,13 +31,17 @@ if (cmsURL.match("CMS")) {
     request.send();
   }
 
-  //Attempts to log in user to server
+  /**
+   * sends a post request to the server of the attempted login details
+   * depending on the respons the innerHTML is changed
+   */
   function login() {
     var usrEmail = document.getElementById("admin-username").value;
     var usrPassword = document.getElementById("admin-password").value;
     let logoutStr = '<button id="logoutadmin" onclick="logoutadmin()">Logout</button>'
     let header_wrpr = document.getElementById("header-wrapper");
 
+    // checks if fields are empty
     if (document.getElementById("admin-username").value == "") {
       document.getElementById("admin-username").style.border = "1px solid red";
       document.getElementById("admin-password").style.border = "1px solid red";
@@ -72,9 +77,9 @@ if (cmsURL.match("CMS")) {
     request.send("username=" + usrEmail + "&password=" + usrPassword);
   }
 
-  //Logs the user out.
+  //Logs the admin out.
   function logoutadmin() {
-    //Create event handler that specifies what should happen when server responds
+    // calls chekcLogin and displays the login screen of CMS page
     request.onload = function () {
       checkLogin();
       showCMSlogin();
@@ -87,6 +92,10 @@ if (cmsURL.match("CMS")) {
   }
 
 
+  /**
+   * sends a get request to the server and replaces the innerHTML 
+   * if the CMS login screen with the server's respons being the CMS site
+   */
   function showCMSPage() {
     let request = new XMLHttpRequest();
     request.onload = function () {

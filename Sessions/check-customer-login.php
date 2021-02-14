@@ -25,7 +25,7 @@ $customers = $mongoClient->www->Customers;
         echo ' Password : <input  id="cust-pass" type="text" name="password" value="' . $customer['password']. '">';
         echo ' <button id="change-details" onclick="changeDetails()">Change</button>';
         echo ' <button id="log-out-customer" onclick="log_out()">Logout</button>';
-        echo ' <button id="view-customer-orders" onclick="viewOrders()">View Orders</button>';
+        echo ' <button id="view-customer-orders" onclick="viewCustOrders()">View Orders</button>';
         echo ' </div>';
 
     }

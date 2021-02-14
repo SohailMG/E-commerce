@@ -25,7 +25,8 @@ if( array_key_exists("customer", $_SESSION) ){
         "Name"  => $itemName,
         "Price" => $itemPrice,
         "Size"  => $itemSize,
-        "Img_url" => $itemImg
+        "Img_url" => $itemImg,
+        "status" => "temp"
     ];
     // storing item data in cart collection
     $cart_collection->insertOne($cartData);
@@ -35,7 +36,8 @@ if( array_key_exists("customer", $_SESSION) ){
         "Name"  => $itemName,
         "Price" => $itemPrice,
         "Size"  => $itemSize,
-        "Img_url" => $itemImg
+        "Img_url" => $itemImg,
+        "status" => "temp"
     ];
     // storing item data in cart collection
     $cart_collection->insertOne($cartData);

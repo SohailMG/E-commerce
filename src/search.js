@@ -1,3 +1,9 @@
+/**
+ * this script handles the search functionality of the website
+ * 
+ */
+
+// checking if current page is cart then search is dissabled 
 if (URL.match("cart")) {
   let search_box = document.getElementById("search-box");
   let search_btn = document.getElementById("search-btn");
@@ -8,6 +14,11 @@ if (URL.match("cart")) {
     post_search();
   }
 
+  /**
+   * takes the current value of the search box 
+   * and sends a post request to the server 
+   * then inner html is replaced with search results
+   */
   function search_item() {
     let search_box = document.getElementById("search-box");
     let results_box = document.getElementsByClassName("products-wrapper");
@@ -21,6 +32,7 @@ if (URL.match("cart")) {
             results_box[i].innerHTML = request.responseText;
           }
         } else {
+          // changing styles to allow main section to fit all searches
           document.querySelector("main").innerHTML = request.responseText;
           document.querySelector("footer").style.marginTop = "15%";
           document.querySelector("main").style.height = "100%";
@@ -46,6 +58,9 @@ if (URL.match("cart")) {
     request.send("search=" + search_box.value);
   }
 
+  /**
+   * sends a GET request of all searches 
+   */
   function getSearches() {
     request.onload = function () {
       //Check HTTP status code

@@ -1,62 +1,68 @@
 /**
+ * this script handles the functionality of
+ * updating an item within the CMS page
+ */
+
+/**
  * posts the form data to be updated to an updateproduct.php
  * script and displays the updated data back into the table
  */
 function update_item() {
-  let updated_id = document.getElementById("update-id");
-  let updated_name = document.getElementById("update-name");
-  let updated_price = document.getElementById("update-price");
-  let updated_size = document.getElementById("update-size");
-  let updated_stock = document.getElementById("update-stock");
-  let updateMsg = document.getElementById("update-msg");
+     let updated_id = document.getElementById("update-id");
+     let updated_name = document.getElementById("update-name");
+     let updated_price = document.getElementById("update-price");
+     let updated_size = document.getElementById("update-size");
+     let updated_stock = document.getElementById("update-stock");
+     let updateMsg = document.getElementById("update-msg");
 
-  let formelms = [
-    updated_stock,
-    updated_id,
-    updated_name,
-    updated_price,
-    updated_size,
-  ];
+     // array of form fields
+     let formelms = [
+          updated_stock,
+          updated_id,
+          updated_name,
+          updated_price,
+          updated_size,
+     ];
+     // checking if all fields are emtpy
+     if (
+          updated_stock.value == "" ||
+          updated_id.value == "" ||
+          updated_name.value == "" ||
+          updated_price.value == "" ||
+          updated_size.value == ""
+     ) {
+          updateMsg.innerHTML = "Fill all fields";
+          updateMsg.style.color = "red";
+     } else {
+          request.onload = function () {
+               //Check HTTP status code
+               if (request.status === 200) {
+                    show_updated(request.responseText);
+                    formelms.forEach((element) => {
+                         element.value = "";
+                    });
+               } else console.log("Error communicating with server");
+          };
 
-  if (
-    updated_stock.value == "" ||
-    updated_id.value == "" ||
-    updated_name.value == "" ||
-    updated_price.value == "" ||
-    updated_size.value == ""
-  ) {
-    updateMsg.innerHTML = "Fill all fields";
-    updateMsg.style.color = "red";
-  } else {
-    request.onload = function () {
-      //Check HTTP status code
-      if (request.status === 200) {
-        show_updated(request.responseText);
-        formelms.forEach((element) => {
-          element.value = "";
-        });
-      } else console.log("Error communicating with server");
-    };
-
-    //Set up and send request
-    request.open("POST", "./CMS/update-product.php");
-    request.setRequestHeader(
-      "Content-type",
-      "application/x-www-form-urlencoded"
-    );
-    request.send(
-      "id=" +
-        updated_id.value +
-        "&name=" +
-        updated_name.value +
-        "&price=" +
-        updated_price.value +
-        "&size=" +
-        updated_size.value +
-        "&stock=" +
-        updated_stock.value
-    );
-  }
+          //Set up and send request
+          request.open("POST", "./CMS/update-product.php");
+          request.setRequestHeader(
+               "Content-type",
+               "application/x-www-form-urlencoded"
+          );
+          request.send(
+               "id=" +
+                    updated_id.value +
+                    "&name=" +
+                    updated_name.value +
+                    "&price=" +
+                    updated_price.value +
+                    "&size=" +
+                    updated_size.value +
+                    "&stock=" +
+                    updated_stock.value
+          );
+     }
 }
 
 /**
@@ -68,16 +74,18 @@ function update_item() {
  * @param {string} updated_row
  */
 function show_updated(updated_row) {
-  let pid = document.getElementById("update-id");
-  var table = document.getElementById("table").getElementsByTagName("tbody")[0];
-  for (let therow of table.rows) {
-    for (let thecell of therow.cells) {
-      if (thecell.innerText == pid.value) {
-        therow.innerHTML = updated_row;
-        highlight(therow);
-      }
-    }
-  }
+     let pid = document.getElementById("update-id");
+     var table = document
+          .getElementById("table")
+          .getElementsByTagName("tbody")[0];
+     for (let therow of table.rows) {
+          for (let thecell of therow.cells) {
+               if (thecell.innerText == pid.value) {
+                    therow.innerHTML = updated_row;
+                    highlight(therow);
+               }
+          }
+     }
 }
 
 /**
@@ -87,9 +95,9 @@ function show_updated(updated_row) {
  * @param {HTMLElement} elm
  */
 function highlight(elm) {
-  var original = elm.style.color;
-  elm.style.color = "green";
-  window.setTimeout(function () {
-    elm.style.color = original;
-  }, 1000);
+     var original = elm.style.color;
+     elm.style.color = "green";
+     window.setTimeout(function () {
+          elm.style.color = original;
+     }, 1000);
 }

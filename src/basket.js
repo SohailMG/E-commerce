@@ -1,10 +1,15 @@
+/**
+ * this script deals with basket functionality such as 
+ * removing an item from the basket as well as 
+ * displaying and updating the current total of the 
+ * basket.
+ */
+
+
 
 if (URL.match('cart')) {
-
-    // window.onload = updateCartTotal;
-
+    // creating an event listner to the remove item button
     var removeCartItem = document.getElementsByClassName('remove-item');
-    console.log(removeCartItem);
 
     for (let i = 0; i < removeCartItem.length; i++) {
         let removeBtn = removeCartItem[i];
@@ -13,18 +18,24 @@ if (URL.match('cart')) {
             let removeClicked = event.target
             let itemDetails = removeClicked.parentElement;
 
+            // storing the name of the item being removed 
             let itemName = itemDetails.getElementsByClassName('order-name')[0].innerHTML;
             let item_name = itemName.substr(10);
             removeBasketItem(item_name);
             
-            
+            // removing the clicked item from the basket
             removeClicked.parentElement.remove();
+            // updating the current total
             updateCartTotal()
         })
         
     }
-
-
+    /**
+     * takes a string name of the item being removed 
+     * and post it to the server to be removed from the cart
+     * collection
+     * @param {string} itemName 
+     */
     function removeBasketItem(itemName){
 
         request.onload = function () {
@@ -41,9 +52,11 @@ if (URL.match('cart')) {
           );
 
     }
-
-
-
+    /**
+     * extracts the innerHTML of all price classes within the document
+     * and calculates the total by multipling quantity with the current
+     *  total with each item's price.
+     */
     function updateCartTotal(){
         let cartContainer = document.getElementsByClassName('cart-container')[0];
         let cartItems = cartContainer.getElementsByClassName('order-details');
@@ -52,19 +65,21 @@ if (URL.match('cart')) {
 
         for (let i = 0; i < cartItems.length; i++) {
             
-
+            // getting the html elements of each item
             let cartItem = cartItems[i];
+            // getting the price and quantity element of each item
             let itemPriceElm = cartItem.getElementsByClassName('order-price')[0];
             let itemQuantityElm = cartItem.getElementsByClassName('order-quantity')[0];
 
+            // converting string into float
             let itemPrice = parseFloat( itemPriceElm.innerHTML.replace('Price : £',''));
             let quantity = itemQuantityElm.value;
             cartTotal = cartTotal + (itemPrice * quantity);
             orderTotalElm.innerHTML='Total : £' +  cartTotal;
-            // storeTotal(cartTotal);
+
+            // storing total into localStorage to be used in checkout
             if (localStorage.getItem('cartTotal') == null) {
-                localStorage.setItem('cartTotal',cartTotal);
-                
+                localStorage.setItem('cartTotal',cartTotal);    
                 
             }else{
                 localStorage.removeItem('cartTotal');

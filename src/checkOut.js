@@ -1,6 +1,16 @@
+/**
+ * this script manages customer checkout by displaying 
+ * an order summary of all customer basket items
+ * it also stores delivery address to the order's document
+ */
+
 if (URL.match("payment")) {
   window.onload = checkOut;
 
+
+  /**
+   * displays all basket items of currently logged user
+   */
   function checkOut() {
     
     let orderDetails = document.getElementById("orders-wrapper");
@@ -19,7 +29,10 @@ if (URL.match("payment")) {
     request.send();
   }
 
-
+/**
+ * sends a POST request to the server of 
+ * the address details then displays confirmation page
+ */
 function storeAddressDetails() {
     let street = document.getElementById("street");
     let city = document.getElementById("city");
@@ -32,7 +45,7 @@ function storeAddressDetails() {
     } else console.log("Error communicating with server");
   };
   // sending a post request to add product data as a json string
-  request.open("POST", "./customer-orders.php");
+  request.open("POST", "./order-confirmation.php");
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(
           "street=" +
@@ -44,13 +57,23 @@ function storeAddressDetails() {
         );
 }
 
-
+/**
+ * replaces the inner html of the current order container
+ * with the html elements of the server respons to 
+ * display the confirmation of customer order
+ * @param {HTMLElement} orderConfirmation 
+ */
 function showOrderConfirmation(orderConfirmation){
 
     document.getElementsByClassName('order-container')[0].innerHTML = orderConfirmation;
     document.getElementById('ordersTotal').innerHTML = "Total : £" +  localStorage.getItem('cartTotal');
 }
 }
+/**
+ * called once user clicks on checkout
+ * user only gets redirected to checkout page
+ * if they're logged.
+ */
 function gotoPayment() {
   let errorMsg = document.getElementById('checkoutMsg');
   if (localStorage.getItem('customerLogged')) {

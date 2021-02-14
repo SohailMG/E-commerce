@@ -1,3 +1,12 @@
+/**
+ * this script handles the functionality of adding
+ * new products to the database
+ */
+
+/**
+ * takes the values of the add form and sends a post
+ * request with the new product data into the server
+ */
 function addNewProduct() {
   let NewProductName = document.getElementById("addform-Name");
   let NewProductPrice = document.getElementById("addform-Price");
@@ -48,7 +57,7 @@ function addNewProduct() {
           let added_item_form = document.getElementById("added-item-info");
           add_to_table(request.responseText);
 
-          // added_item_form.style.display="block";
+          
           added_item_form.innerHTML = request.responseText;
         }
       } else console.log("Error communicating with server");

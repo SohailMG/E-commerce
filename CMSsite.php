@@ -33,7 +33,7 @@
                             echo ' <tr>';
                             echo ' <td>' . $product['_id'] . '</td>';
                             echo ' <td>' . $product['Name'] . '</td>';
-                            echo ' <td>£'. $product['Price'] . '</td>';
+                            echo ' <td>£' . $product['Price'] . '</td>';
                             echo ' <td>' . $product['size'] . '</td>';
                             echo ' <td>' . $product['Quantity'] . '</td>';
                             echo ' </tr>';
@@ -62,7 +62,7 @@
                             echo ' <tr>';
                             echo ' <td>' . $product['_id'] . '</td>';
                             echo ' <td>' . $product['firstname'] . '</td>';
-                            echo ' <td>'. $product['email'] . '</td>';
+                            echo ' <td>' . $product['email'] . '</td>';
                             echo ' </tr>';
                         }
                         ?>

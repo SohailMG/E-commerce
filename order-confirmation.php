@@ -31,14 +31,14 @@
         echo ' <div id="order-confirmation">';
         echo '<h1>Thank you for your purchase...</h1>';
         echo '<p><b>Delivery to: </b></p>';
-        echo '<p>'.$street.' <br> '.$city.' <br> '.$postcode.' </p>';
+        echo '<p>' . $street . ' <br> ' . $city . ' <br> ' . $postcode . ' </p>';
         foreach ($customer_basket as $item) {
             $order_name = $item['Name'];
             $order_Price = $item['Price'];
             $order_Size = $item['Size'];
             $order_Img = $item['Img_url'];
             $order_id = $item['Name'];
-            
+
             $order = array(
                 "Name" => $order_name,
                 "Price" => $order_Price,
@@ -49,19 +49,19 @@
                 "city" => $city,
                 "postcode" => $postcode
             );
-            
-            
+
+
             $insertedResults =  $orders_collection->insertOne($order);
             $new_id = $insertedResults->getInsertedId();
-            
-            
+
+
             echo ' <div id="orderDetails">';
-            echo ' <div>Order No <p id="orderNo">'.$new_id.'</p></div>';
-            echo ' <div>Name <p id="orderName">'.$order_name.'</p></div>';
-            echo ' <div>Price <p id="orderPrice">'.$order_Price.'</p></div>';
+            echo ' <div>Order No <p id="orderNo">' . $new_id . '</p></div>';
+            echo ' <div>Name <p id="orderName">' . $order_name . '</p></div>';
+            echo ' <div>Price <p id="orderPrice">' . $order_Price . '</p></div>';
             echo ' </div>';
         }
         echo '<p id="ordersTotal"></p>';
         echo ' </div>';
     }
-
+    $deleteResult = $cart_collection->deleteMany(['status' => 'temp']);

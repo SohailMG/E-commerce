@@ -12,7 +12,7 @@ if ($search_string == "") {
     $findCriteria = [
         '$text' => ['$search' => "valentine"]
     ];
-    $cursor = $db->Products->find($findCriteria,['limit' => 4]);
+    $cursor = $db->Products->find($findCriteria, ['limit' => 4]);
     echo '    <p>Recommended</p>';
     echo '  <div id="suggesteds">';
     foreach ($cursor as $product) {

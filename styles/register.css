@@ -136,4 +136,22 @@
    
 
 }
-
+#orders-container {
+    margin-left: 28%;
+    margin-top: 10%;
+}
+#orders-container > button {
+    width: 90px;
+    height: 30px;
+    border: none;
+    background-color: teal;
+    color: white;
+    margin-top: 10px;
+    
+}
+#orders-container > button:hover {
+    background-color: white;
+    color: black;
+    
+    
+}

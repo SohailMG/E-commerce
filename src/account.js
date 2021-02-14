@@ -1,5 +1,12 @@
-let URL = window.location.href;
+/**
+ * acccount script deals with customer registration
+ * customer login and displaying of account
+ * details using ajax
+ * 
+ */
 
+
+let URL = window.location.href;
 if (URL.match("Register")) {
   window.onload = check_customer_logged;
 
@@ -34,15 +41,13 @@ if (URL.match("Register")) {
     switch_signIn.style.backgroundColor = "teal";
     switch_signIn.style.color = "white";
   };
-} else if (URL.match("cart")) {
-  // checkout button to payment page
-  let checkout_btn = document.getElementById("check-out");
-
-  // checkout_btn.onclick = () => {
-  //   location.href = "payment.php";
-  // };
 }
 
+/**
+ * sign up works by retireving fileds values from 
+ * sign up form and posting them to a sign-up.php
+ * script to store into the customer collection
+ */
 function sing_up() {
   let cust_fname = document.getElementById("customer-fname");
   let cust_lname = document.getElementById("customer-lname");
@@ -54,6 +59,7 @@ function sing_up() {
 
   let form_fields = [cust_num, cust_email, cust_fname, cust_lname, cust_pass];
 
+  // checking for empty fileds
   if (
     cust_fname.value == "" ||
     cust_lname.value == "" ||
@@ -66,6 +72,7 @@ function sing_up() {
     });
     return;
   } else {
+    // creating an array of customer data as json 
     let customer_data = {
       firstname: cust_fname.value,
       lastname: cust_lname.value,
@@ -78,6 +85,7 @@ function sing_up() {
       //Check HTTP status code
       if (request.status === 200) {
         if (request.responseText != "failed") {
+          // replacing signup form with sign in form 
           account_page.innerHTML = request.responseText;
         }
       } else console.log("Error communicating with server");
@@ -88,6 +96,7 @@ function sing_up() {
       "Content-type",
       "application/x-www-form-urlencoded"
     );
+    // sending customer data as json array
     request.send("CustomerData=" + JSON.stringify(customer_data));
   }
 }
@@ -106,15 +115,18 @@ function login_customer() {
     if (request.status === 200) {
       //Get data from server
       var responseData = request.responseText;
-      //Add data to page
+      //checking if request returns incorrect password
       if (responseData == "incorrect password") {
-        error_msg.innerHTML = request.responseText;
+        error_msg.innerHTML = responseData;
         return;
       } else if (responseData == "Email not found") {
         error_msg.innerHTML = request.responseText;
         return;
       } else {
+        // setting a logged customer key in local storage used to prevent
+        // checkout without user being logged in
         localStorage.setItem('customerLogged',true);
+        // replacing login form with customer details sent from server
         account_page.innerHTML = request.responseText;
       }
     } else console.log("Error communicating with server");
@@ -126,26 +138,39 @@ function login_customer() {
   request.send("email=" + login_email.value + "&password=" + login_pass.value);
 }
 
+/**
+ * sets up a get request from php script to check
+ * if a customer is logged depening on server respond
+ * innerHTML of page is replaced
+ */
 function check_customer_logged() {
   let account_page = document.getElementById("register-form");
   //Create event handler that specifies what should happen when server responds
   request.onload = function () {
     if (request.responseText != "not logged") {
+      // displaying account details page
       account_page.innerHTML = request.responseText;
     } else {
       console.log("not logged");
     }
   };
   //Set up and send request
-  request.open("GET", "./check-customer-login.php");
+  request.open("GET", "./Sessions/check-customer-login.php");
   request.send();
 }
 
+/**
+ * removes customerlogged key from localstorage
+ * and reloads page to display sign in form
+ */
 function log_out() {
-  //Create event handler that specifies what should happen when server responds
+  // checks if session has been destroyed and server respons with ok
   request.onload = function () {
-    localStorage.removeItem('customerLogged');
-    document.location = "Register.php";
+    if (request.responseText ==='ok') {
+      
+      localStorage.removeItem('customerLogged');
+      document.location = "Register.php";
+    }
   };
 
   //Set up and send request
@@ -153,6 +178,11 @@ function log_out() {
   request.send();
 }
 
+/**
+ * changeDetails works by posting form values to 
+ * the server and replacing current details with updated
+ * details using ajax
+ */
 function changeDetails() {
   let cust_fname = document.getElementById("cust-fname");
   let cust_lname = document.getElementById("cust-lname");
@@ -161,7 +191,7 @@ function changeDetails() {
   let cust_num = document.getElementById("cust-num");
   let account_page = document.getElementById("register-form");
   
-
+   // storing current form values of customer details
   let fitstname = cust_fname.value;
   let lastname = cust_lname.value;
   let email = cust_email.value;
@@ -170,6 +200,7 @@ function changeDetails() {
 
   if (request.status === 200) {
     console.log(request.responseText);
+    // replacing old details with new details
     account_page.innerHTML = request.responseText;
   } else console.log("Error communicating with server");
 
@@ -188,4 +219,34 @@ function changeDetails() {
       "&number=" +
       number
   );
+}
+
+/**
+ * sends a get request to the server for customer orders
+ * and replaces the innerhtml of main tage with 
+ * html containing customer's order details
+ */
+function viewCustOrders(){
+
+  let account_page=document.querySelector('main');
+
+  request.onload = function () {
+    //Check HTTP status code
+    if (request.status === 200) {
+      //Get data from server
+      console.log(request.responseText);
+      account_page.innerHTML=request.responseText;
+    }else{
+      console.log("failed")
+    }
+  };
+  request.open("GET", "./view-orders.php");
+  request.send();
+
+
+
+}
+// returns from order screen to account details
+function returnToAccount(){
+  location.href="Register.php";
 }

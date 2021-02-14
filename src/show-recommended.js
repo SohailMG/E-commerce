@@ -3,14 +3,14 @@ import { Recommender } from "./recommender.js";
 
 //Create recommender object - it loads its state from local storage
 let recommender = new Recommender();
-
 /* Set up button to call search function. We have to do it here 
-                because search() is not visible outside the module. */
+because search() is not visible outside the module. */
 
 //Display recommendation
 if (!URL.match(/payment|perfumes|Register/)) {
   document.getElementById("search-btn").onclick = search;
   window.onload = showRecommendation;
+  
 
   //Searches for products in database
   function search() {
@@ -23,17 +23,21 @@ if (!URL.match(/payment|perfumes|Register/)) {
     search_item();
   }
 
-  //Display the recommendation in the document
+  /**
+   * sends a post request of the most frequent word 
+   * and replaces innerHTML of recommended with all
+   * searches matching given word
+   */
   function showRecommendation() {
     let suggestedBox = document.getElementsByClassName("suggested-items")[0];
     request.onload = function () {
       //Check HTTP status code
       if (request.status === 200) {
-        console.log(request.responseText);
-        // if (URL.match('cart')) {
+        // console.log(request.responseText);
+        if (URL.match('cart')) {
 
         suggestedBox.innerHTML = request.responseText;
-        // }
+        }
       } else console.log("Error communicating with server");
     };
 
@@ -45,12 +49,12 @@ if (!URL.match(/payment|perfumes|Register/)) {
     );
     request.send("topKeyword=" + recommender.getTopKeyword());
 
-    console.log(recommender.getTopKeyword());
+    // updating cart total when page is cart
     if (URL.match("cart")) {
       updateCartTotal();
     }
+    //
     if (URL.match("perfumes")) {
-      
       let suggestedItems = document.getElementsByClassName(
         "suggested-items"
       )[0];
@@ -58,6 +62,6 @@ if (!URL.match(/payment|perfumes|Register/)) {
       suggestedItems.style.marginTop = "0%";
     }
   }
-  
+
   // }
 }

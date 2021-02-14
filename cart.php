@@ -38,7 +38,7 @@ outputHeaderNav("Cart");
             echo ' <div class="order-details">';
             echo ' <div class="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
             echo ' <p class="order-name">Product : ' . $item['Name'] . '</p>';
-            echo ' Quantity:<input class="order-quantity" value="1" type="text">';
+            echo ' Quantity:<input class="order-quantity" value="1" type="text" onfocusout="updateCartTotal()">';
             echo ' <button class="remove-item">Remove</button>';
             echo ' <p class="order-price">Price : ' . $item['Price'] . '</p>';
             
@@ -53,7 +53,7 @@ outputHeaderNav("Cart");
             echo ' <div class="order-details">';
             echo ' <div class="order-img"><img src="' . $item['Img_url'] . '" alt=""></div>';
             echo ' <p class="order-name">Product : ' . $item['Name'] . '</p>';
-            echo ' Quantity:<input class="order-quantity" value="1" type="text">';
+            echo ' Quantity:<input class="order-quantity" value="1" type="text" onfocusout="updateCartTotal()">';
             echo ' <button class="remove-item">Remove</button>';
             echo ' <p class="order-price">Price : ' . $item['Price'] . '</p>';
             

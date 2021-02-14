@@ -28,7 +28,6 @@ $cart_collection = $db->cart;
         echo '<div id="order-img"><img src="'.$item['Img_url'].'" alt=""></div>';
         echo '<div id="order-name">Name:<p>'.$item['Name'].'</p> </div>';
         echo '<div id="order-price">Price:<p>'.$item['Price'].'</p> </div>';
-        echo '<div id="order-quantity">Quantity:<p>'.$item['Quantity'].'</p></div>';
         echo '</div>';
 
     }
