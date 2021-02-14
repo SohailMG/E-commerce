@@ -58,3 +58,4 @@ function addToCart(event) {
                itemImage.substr(26)
      );
 }
+

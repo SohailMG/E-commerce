@@ -77,7 +77,9 @@
                     Price: <input type="text" id="addform-Price">
                     Quantity: <input type="text" id="addform-Quantity">
                     Size: <input type="text" id="addform-Size" placeholder="e.g 50ml">
-                    Image: <input type="text" id="addform-Image" placeholder="e.g Images/Boss.png">
+                    Image URL: <input type="text" id="addform-Image" placeholder="e.g Images/Boss.png">
+                    <input id="fileupload" type="file" name="fileupload" />
+                    <button id="upload-button" onclick="uploadFile()"> Upload </button>
                     KeyWords: <input type="text" id="addform-keywords" placeholder="mens black cheap..etc">
                     <p id="errorMsg"></p>
                     <button id="addProduct" onclick="addNewProduct()">Add</button>
