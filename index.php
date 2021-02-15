@@ -20,9 +20,6 @@ outputHeaderNav("Home");
         }
         </script>
     </section>
-
-
-
 </main>
 
 <?php

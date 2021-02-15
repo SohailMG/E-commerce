@@ -11,7 +11,7 @@ $db = $mongoClient->www;
 $cart_collection = $db->cart;
 
 
-
+    
     if (array_key_exists("customer", $_SESSION)) {
     $customer_id =  $_SESSION["customerID"];
 

@@ -2,7 +2,7 @@
   margin-right: 4%;
   width: 137px;
   border: none;
-  background-color: darkgray;
+  background-color: rgb(82, 82, 82);
   color: white;
   height: 40px;
 }
@@ -20,13 +20,12 @@
     
     
 }
-
 #sort-products {
   align-content: right;
   align-items: right;
   width: 100%;
   height: 40px;
-  background-color: gainsboro;
+  /* background-color: gainsboro; */
 }
 /* main section of products page styles */
 .products-wrapper {

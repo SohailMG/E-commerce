@@ -1,12 +1,12 @@
 <?php
 
-/* Get the name of the uploaded file */
+//  extracting the name of the fle
 $filename = $_FILES['file']['name'];
 
-/* Choose where to save the uploaded file */
+// path of where file is uploaded
 $location = "Images/".$filename;
 
-/* Save the uploaded file to the local filesystem */
+//  saving the uplaoded file to filesystem and echoing back the name of the file
 if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
   echo $filename; 
 } else { 

@@ -5,9 +5,8 @@ $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->www;
 $search_string = filter_input(INPUT_POST, 'topKeyword', FILTER_SANITIZE_STRING);
 
-
-
-
+// checking if no keywords was stored then will echo back default recommended items 
+// of the current season
 if ($search_string == "") {
     $findCriteria = [
         '$text' => ['$search' => "valentine"]
@@ -29,13 +28,14 @@ if ($search_string == "") {
     }
     echo '    </div>';
 
-    //Create a PHP array with our search criteria
+
+    // perfomring an indexed search on the top keyword searched by user
 } else {
     $findCriteria = [
         '$text' => ['$search' => $search_string]
     ];
 
-    //Find all of the customers that match  this criteria
+    //Find only 4  products that has seach criteria
     $cursor = $db->Products->find($findCriteria, ['limit' => 4]);
 
     echo '    <p>Recommended</p>';

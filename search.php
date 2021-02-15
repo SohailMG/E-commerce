@@ -1,20 +1,21 @@
 <?php
 
-
+// script handles indexed search funtionality
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->www;
+// extracting search keywords
 $search_string = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
 
-//Create a PHP array with our search criteria
+//Create a PHP array with  search criteria
 $findCriteria = [
     '$text' => ['$search' => $search_string]
 ];
 
-//Find all of the customers that match  this criteria
+//Finding all of the products that match  this criteria
 $cursor = $db->Products->find($findCriteria);
 
-//Output the results
+//posting back results into the server to be added using ajax
 echo '<p>Search Results.....</p>';
 echo '<div class="gridwrapper">';
 // looping through arrays of data from mongodb and outputing specific product values

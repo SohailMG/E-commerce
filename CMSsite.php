@@ -1,3 +1,4 @@
+<!-- CMS site includes - adding product - view and remove orders - update product - view products -->
 <main>
     <!-- main CMS page content -->
     <div class="cms-wrapper">
@@ -9,7 +10,9 @@
                 <button id="update-btn" onclick="updateProduct()">Update Product details</button>
                 <button id="view-btn" onclick="viewProduct()">View Products</button>
             </div>
+            <!-- main section of CMS page displays different forms -->
             <div class="task-container">
+            <!-- database table displaying all product's table -->
                 <table id="table">
                     <caption>Products Database</caption>
                     <thead>
@@ -28,6 +31,7 @@
                         $mongoClient = (new MongoDB\Client);
                         $db = $mongoClient->www;
                         $cursor = $db->Products->find();
+                        // quering all products in database and displaying it into the page
                         foreach ($cursor as $product) {
 
                             echo ' <tr>';
@@ -41,6 +45,7 @@
                         ?>
                     </tbody>
                 </table>
+                <!-- table displaying all customers and their data -->
                 <table id="customers-table">
                     <caption>Customers Database</caption>
                     <thead>
@@ -51,6 +56,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <!-- quering all customer collections's data -->
                         <?php
                         //Include libraries
                         require __DIR__ . '/vendor/autoload.php';
@@ -77,19 +83,15 @@
                     Price: <input type="text" id="addform-Price">
                     Quantity: <input type="text" id="addform-Quantity">
                     Size: <input type="text" id="addform-Size" placeholder="e.g 50ml">
-                    Image URL: <input type="text" id="addform-Image" placeholder="e.g Images/Boss.png">
+                    <!-- adding and uploading image form -->
+                    Image URL: <input type="text" id="addform-Image" placeholder="Image Must be 200x200" disabled="true">
                     <input id="fileupload" type="file" name="fileupload" />
                     <button id="upload-button" onclick="uploadFile()"> Upload </button>
                     KeyWords: <input type="text" id="addform-keywords" placeholder="mens black cheap..etc">
                     <p id="errorMsg"></p>
+                    <!-- button to add product info -->
                     <button id="addProduct" onclick="addNewProduct()">Add</button>
                 </div>
-
-                <div id="added-item-info">
-                </div>
-
-
-
 
                 <!-- remove product form -->
                 <div id="remove-form">

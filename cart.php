@@ -19,17 +19,19 @@ outputHeaderNav("Cart");
     $cart_collection = $db->cart;
 
 
+    // checking if cart collection is empty
     if ($cart_collection->count() == 0) {
         echo '<h1>Your Bag is emtpy...</h1>';
     }else
     if (array_key_exists("customer", $_SESSION)) {
         $customer_id =  $_SESSION["customerID"];
 
-
+        // creating find criteria for customer id
         $findCriteria = [
             "cust_id" => $customer_id,
         ];
 
+        // quering only basket items with the same customer id 
         $customer_basket = $cart_collection->find($findCriteria);
         echo '<h1>Your Bag...</h1>';
 
@@ -46,6 +48,7 @@ outputHeaderNav("Cart");
         }
         echo ' <p class="order-total">Total : </p>';
     echo ' <button class="checkout-btn" onclick="gotoPayment()">Check-out</button>';
+    // displaying all cart items when customer is not logged
     } else {
         $customer_basket = $cart_collection->find();
         echo '<h1>Your Bag...</h1>';

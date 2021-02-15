@@ -8,27 +8,28 @@ $mongoClient = (new MongoDB\Client);
 //Select a database
 $db = $mongoClient->www;
 
-
+// getting value of selectd sorted option
 $sortOpt = filter_input(INPUT_POST, 'sortBy', FILTER_SANITIZE_STRING);
 
-
+// checking if sort option is price from low to high
 if ($sortOpt == "PriceAsc") {
     $filter  = [];
     $options = ['sort' => ['Price' => 1]];
     $cursor = $mongoClient->$db->Products->find($filter, $options);
-
+// checking if sort option is price from high to low
 } else if ($sortOpt == "PriceDec") {
     
     $filter  = [];
     $options = ['sort' => ['Price' => -1]];
     $cursor = $mongoClient->$db->Products->find($filter, $options);
 
-
+// checking if sort option is in alphabatical order
 } else if ($sortOpt == "AtoZ") {
     $filter  = [];
     $options = ['sort' => ['Name' => 1]];
     $cursor = $mongoClient->$db->Products->find($filter, $options);
 
+    // checking if no option was selected
 } else {
     foreach ($cursor as $product) {
     
@@ -43,7 +44,7 @@ if ($sortOpt == "PriceAsc") {
 
 
 }
-
+// echoing back sorted results depending on posted value
 foreach ($cursor as $product) {
     
     echo '<div class="perfume-data">';
