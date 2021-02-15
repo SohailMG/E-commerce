@@ -69,6 +69,8 @@ if (URL.match("payment")) {
           )[0].innerHTML = orderConfirmation;
           document.getElementById("ordersTotal").innerHTML =
                "Total : £" + localStorage.getItem("cartTotal");
+
+               localStorage.removeItem('cartNames');
      }
 }
 /**

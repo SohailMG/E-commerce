@@ -65,8 +65,10 @@ nav > a{
     margin-top: 30px;
 }
 .selected{
-    color:red;
+    color:teal;
     border-radius: 10px;
+    font-weight: bold;
+    font-size: 21px;
 
 }
 /* main section of home page */

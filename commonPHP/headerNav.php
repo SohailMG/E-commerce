@@ -85,14 +85,14 @@ function outputFooter(){
 
 
 </body>
-<script src="src/admin-login.js"></script>
+<script src="src/CMS-login.js"></script>
 <script src="src/CMS-manager.js"></script>
+<script src="src/CMS-addProduct-ajax.js"></script>
+<script src="src/CMS-remove-order.js"></script>
+<script src="src/CMS-update-product.js"></script>
 <script src="src/account.js"></script>
 <script src="src/addtocart.js"></script>
-<script src="src/CMS-addProduct-ajax.js"></script>
-<script src="src/remove-item.js"></script>
 <script src="src/search.js"></script>
-<script src="src/update-item.js"></script>
 <script src="src/basket.js"></script>
 <script src="src/checkOut.js"></script>
 <script src="src/sortItems.js"></script>

@@ -74,3 +74,11 @@
   font-weight: bold;
   color: tomato;
 }
+.item-msg {
+  position: absolute;
+  display: none;
+  text-align: center;
+  background-color: white;
+  width: 250px;
+  height: 244px;
+}

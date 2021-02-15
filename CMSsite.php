@@ -96,9 +96,9 @@
                 <!-- remove product form -->
                 <div id="remove-form">
                     <h1>Remove Order</h1>
-                    Customer ID: <input id="view-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
+                    Customer ID: <input id="view-id" type="text" >
                     <button id="remove-product" onclick="viewOrders()">View Orders</button>
-                    Order ID: <input id="remove-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
+                    Order ID: <input id="remove-id" type="text">
                     <button id="remove-product" onclick="remove_item()">Remove</button>
                     <button id="view-customers" onclick="viewCustomers()">View Customers</button>
                     <p id="removed-msg"></p>

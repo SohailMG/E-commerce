@@ -91,7 +91,6 @@ if (cmsURL.match("CMS")) {
     request.send();
   }
 
-
   /**
    * sends a get request to the server and replaces the innerHTML 
    * if the CMS login screen with the server's respons being the CMS site

@@ -29,33 +29,77 @@ function addToCart(event) {
      let itemname = shopItem.getElementsByClassName("item-name")[0].innerHTML;
      let itemSize = shopItem.getElementsByClassName("item-size")[0].innerHTML;
      let itemPrice = shopItem.getElementsByClassName("item-price")[0].innerHTML;
-     cart_amount.style.color = "red";
-     cart_amount.innerHTML = cart_count++;
-     console.log(cart_count);
+     let itemMsg = shopItem.getElementsByClassName("item-msg")[0];
+     // checking if item is already added to cart
+     if (isAddedAlready(itemname)) {
+          alertNotAdded(itemMsg);
+     } else {
+          alertAdded(itemMsg)
+          cart_amount.style.color = "red";
+          cart_amount.innerHTML = cart_count++;
+          console.log(cart_count);
 
-     // Create event handler that specifies what should happen when server responds
-     request.onload = function () {
-          //Check HTTP status code
-          if (request.status === 200) {
-               console.log(request.responseText);
-          } else console.log("Error communicating with server");
-     };
+          // Create event handler that specifies what should happen when server responds
+          request.onload = function () {
+               //Check HTTP status code
+               if (request.status === 200) {
+               } else console.log("Error communicating with server");
+          };
 
-     //Set up and send request
-     request.open("POST", "./store-cart.php");
-     request.setRequestHeader(
-          "Content-type",
-          "application/x-www-form-urlencoded"
-     );
-     request.send(
-          "itemName=" +
-               itemname +
-               "&itemPrice=" +
-               itemPrice +
-               "&itemSize=" +
-               itemSize +
-               "&itemImg=" +
-               itemImage.substr(26)
-     );
+          //Set up and send request
+          request.open("POST", "./store-cart.php");
+          request.setRequestHeader(
+               "Content-type",
+               "application/x-www-form-urlencoded"
+          );
+          request.send(
+               "itemName=" +
+                    itemname +
+                    "&itemPrice=" +
+                    itemPrice +
+                    "&itemSize=" +
+                    itemSize +
+                    "&itemImg=" +
+                    itemImage.substr(26)
+          );
+     }
+}
+/**
+ * stores names of added items into localstorage array
+ * checks if item is already added and returns boolean value
+ * @param {String} itemname
+ */
+function isAddedAlready(itemname) {
+     let cartNames = [];
+     if (localStorage.getItem("cartName") == null) {
+          cartNames.push(itemname);
+          localStorage.setItem("cartName", JSON.stringify(cartNames));
+     } else {
+          let currentNames = JSON.parse(localStorage.getItem("cartName"));
+
+          if (currentNames.includes(itemname)) {
+               return true;
+          } else {
+               currentNames.push(itemname);
+               localStorage.setItem("cartName", JSON.stringify(currentNames));
+               return false;
+          }
+     }
 }
 
+function alertNotAdded(itemMsg) {
+     itemMsg.style.display = "block";
+     itemMsg.innerHTML = "Already Added to Cart";
+     itemMsg.style.color = "red";
+     setTimeout(() => {
+          itemMsg.style.display = "none";
+     }, 1000);
+}
+function alertAdded(itemMsg) {
+     itemMsg.style.display = "block";
+     itemMsg.innerHTML = "Item added to Cart";
+     itemMsg.style.color = "green";
+     setTimeout(() => {
+          itemMsg.style.display = "none";
+     }, 1000);
+}
