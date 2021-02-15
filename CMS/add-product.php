@@ -5,7 +5,7 @@
 
                 //Create instance of MongoDB client
                 $mongoClient = (new MongoDB\Client);
-                $db = $mongoClient->www;
+                $db = $mongoClient->perfumefest;
                 $Products = $db->Products;
 
                 $postedData  = $_POST['newItemData'];

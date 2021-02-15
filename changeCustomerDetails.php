@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 //Create instance of MongoDB client
 $mongoClient = (new MongoDB\Client);
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 
 //Extracting and storing the customer details 
 $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);

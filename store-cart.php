@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 //Create instance of MongoDB client
 $mongoClient = (new MongoDB\Client);
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 $cart_collection = $db->cart;
 
 

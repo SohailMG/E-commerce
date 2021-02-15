@@ -8,7 +8,7 @@ require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 
 //Select a database
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 
 $adminName = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $adminPass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);

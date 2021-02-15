@@ -3,7 +3,7 @@
             require __DIR__ . '/vendor/autoload.php';
             //Create instance of MongoDB client
             $mongoClient = (new MongoDB\Client);
-            $db = $mongoClient->www;
+            $db = $mongoClient->perfumefest;
             $customerCollection = $db->Customers;
 
             // storing posted customer's JSON data

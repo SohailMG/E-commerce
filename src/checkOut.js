@@ -1,73 +1,75 @@
 /**
- * this script manages customer checkout by displaying 
+ * this script manages customer checkout by displaying
  * an order summary of all customer basket items
  * it also stores delivery address to the order's document
  */
 
 if (URL.match("payment")) {
-  window.onload = checkOut;
+     window.onload = checkOut;
 
+     /**
+      * displays all basket items of currently logged user
+      */
+     function checkOut() {
+          let orderDetails = document.getElementById("orders-wrapper");
 
-  /**
-   * displays all basket items of currently logged user
-   */
-  function checkOut() {
-    
-    let orderDetails = document.getElementById("orders-wrapper");
+          //Create event handler that specifies what should happen when server responds
+          request.onload = function () {
+               if (request.responseText != "not logged") {
+                    console.log(request.responseText);
+                    orderDetails.innerHTML = request.responseText;
+               } else {
+                    console.log(request.responseText);
+               }
+          };
+          //Set up and send request
+          request.open("GET", "./store-orders.php");
+          request.send();
+     }
 
-    //Create event handler that specifies what should happen when server responds
-    request.onload = function () {
-      if (request.responseText != "not logged") {
-        console.log(request.responseText);
-        orderDetails.innerHTML = request.responseText;
-      } else {
-        console.log(request.responseText);
-      }
-    };
-    //Set up and send request
-    request.open("GET", "./store-orders.php");
-    request.send();
-  }
+     /**
+      * sends a POST request to the server of
+      * the address details then displays confirmation page
+      */
+     function storeAddressDetails() {
+          let street = document.getElementById("street");
+          let city = document.getElementById("city");
+          let postcode = document.getElementById("postcode");
+          request.onload = function () {
+               //Check HTTP status code
+               if (request.status === 200) {
+                    showOrderConfirmation(request.responseText);
+               } else console.log("Error communicating with server");
+          };
+          // sending a post request to add product data as a json string
+          request.open("POST", "./order-confirmation.php");
+          request.setRequestHeader(
+               "Content-type",
+               "application/x-www-form-urlencoded"
+          );
+          request.send(
+               "street=" +
+                    street.value +
+                    "&city=" +
+                    city.value +
+                    "&postcode=" +
+                    postcode.value
+          );
+     }
 
-/**
- * sends a POST request to the server of 
- * the address details then displays confirmation page
- */
-function storeAddressDetails() {
-    let street = document.getElementById("street");
-    let city = document.getElementById("city");
-    let postcode = document.getElementById("postcode");
-  request.onload = function () {
-    //Check HTTP status code
-    if (request.status === 200) {
-      
-      showOrderConfirmation(request.responseText);
-    } else console.log("Error communicating with server");
-  };
-  // sending a post request to add product data as a json string
-  request.open("POST", "./order-confirmation.php");
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(
-          "street=" +
-            street.value +
-            "&city=" +
-            city.value +
-            "&postcode=" +
-            postcode.value
-        );
-}
-
-/**
- * replaces the inner html of the current order container
- * with the html elements of the server respons to 
- * display the confirmation of customer order
- * @param {HTMLElement} orderConfirmation 
- */
-function showOrderConfirmation(orderConfirmation){
-
-    document.getElementsByClassName('order-container')[0].innerHTML = orderConfirmation;
-    document.getElementById('ordersTotal').innerHTML = "Total : £" +  localStorage.getItem('cartTotal');
-}
+     /**
+      * replaces the inner html of the current order container
+      * with the html elements of the server respons to
+      * display the confirmation of customer order
+      * @param {HTMLElement} orderConfirmation
+      */
+     function showOrderConfirmation(orderConfirmation) {
+          document.getElementsByClassName(
+               "order-container"
+          )[0].innerHTML = orderConfirmation;
+          document.getElementById("ordersTotal").innerHTML =
+               "Total : £" + localStorage.getItem("cartTotal");
+     }
 }
 /**
  * called once user clicks on checkout
@@ -75,12 +77,18 @@ function showOrderConfirmation(orderConfirmation){
  * if they're logged.
  */
 function gotoPayment() {
-  let errorMsg = document.getElementById('checkoutMsg');
-  if (localStorage.getItem('customerLogged')) {
-    location.href = "payment.php";
-    
-  }else{
-    errorMsg.innerHTML="Must be logged first"
-
-  }
+     let errorMsg = document.getElementById("checkoutMsg");
+     let cartItem = document.getElementsByClassName("order-details")[0];
+     if (localStorage.getItem("customerLogged")) {
+          if (typeof cartItem != "undefined" && cartItem != null) {
+               location.href = "payment.php";
+          } else {
+               errorMsg.innerHTML = "Add items first";
+               errorMsg.style.color = "red";
+               console.log("non exits");
+          }
+     } else {
+          errorMsg.innerHTML = "Must be logged first";
+          errorMsg.style.color = "red";
+     }
 }

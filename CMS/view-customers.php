@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 $cursor = $db->Customers->find();
 
 

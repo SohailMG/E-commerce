@@ -15,7 +15,7 @@ outputHeaderNav("Cart");
 
     //Create instance of MongoDB client
     $mongoClient = (new MongoDB\Client);
-    $db = $mongoClient->www;
+    $db = $mongoClient->perfumefest;
     $cart_collection = $db->cart;
 
 
@@ -46,6 +46,7 @@ outputHeaderNav("Cart");
             
             echo ' </div>';
         }
+        echo ' <p id="checkoutMsg"></p>';
         echo ' <p class="order-total">Total : </p>';
     echo ' <button class="checkout-btn" onclick="gotoPayment()">Check-out</button>';
     // displaying all cart items when customer is not logged

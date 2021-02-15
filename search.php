@@ -3,7 +3,7 @@
 // script handles indexed search funtionality
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 // extracting search keywords
 $search_string = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
 

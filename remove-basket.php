@@ -8,7 +8,7 @@ require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 
 //Select a database
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 
 // extracting name of item to be deleted
 $item_name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);

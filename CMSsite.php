@@ -29,7 +29,7 @@
                         //Include libraries
                         require __DIR__ . '/vendor/autoload.php';
                         $mongoClient = (new MongoDB\Client);
-                        $db = $mongoClient->www;
+                        $db = $mongoClient->perfumefest;
                         $cursor = $db->Products->find();
                         // quering all products in database and displaying it into the page
                         foreach ($cursor as $product) {
@@ -61,7 +61,7 @@
                         //Include libraries
                         require __DIR__ . '/vendor/autoload.php';
                         $mongoClient = (new MongoDB\Client);
-                        $db = $mongoClient->www;
+                        $db = $mongoClient->perfumefest;
                         $cursor = $db->Customers->find();
                         foreach ($cursor as $product) {
 

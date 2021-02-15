@@ -9,7 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 
 //Select a database
-$customers = $mongoClient->www->Customers;
+$customers = $mongoClient->perfumefest->Customers;
     
     if( array_key_exists("customer", $_SESSION) ){
         $customer_id =  $_SESSION["customerID"];

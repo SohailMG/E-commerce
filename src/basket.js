@@ -75,15 +75,15 @@ if (URL.match('cart')) {
             let itemPrice = parseFloat( itemPriceElm.innerHTML.replace('Price : £',''));
             let quantity = itemQuantityElm.value;
             cartTotal = cartTotal + (itemPrice * quantity);
-            orderTotalElm.innerHTML='Total : £' +  cartTotal;
+            orderTotalElm.innerHTML='Total : £' +  cartTotal.toFixed(2);
 
             // storing total into localStorage to be used in checkout
             if (localStorage.getItem('cartTotal') == null) {
-                localStorage.setItem('cartTotal',cartTotal);    
+                localStorage.setItem('cartTotal',cartTotal.toFixed(2));    
                 
             }else{
                 localStorage.removeItem('cartTotal');
-                localStorage.setItem('cartTotal',cartTotal);
+                localStorage.setItem('cartTotal',cartTotal.toFixed(2));
             }
 
 

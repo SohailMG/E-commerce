@@ -12,7 +12,7 @@ require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 
 //Select a database
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 
 // creating a cursor of all product's data
 $cursor = $db->Products->find();

@@ -7,7 +7,7 @@
 
     //Create instance of MongoDB client
     $mongoClient = (new MongoDB\Client);
-    $db = $mongoClient->www;
+    $db = $mongoClient->perfumefest;
     $cart_collection = $db->cart;
     $orders_collection = $db->orders;
 

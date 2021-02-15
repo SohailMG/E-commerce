@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
 
 //Select a database
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 
 // getting value of selectd sorted option
 $sortOpt = filter_input(INPUT_POST, 'sortBy', FILTER_SANITIZE_STRING);

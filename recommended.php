@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = (new MongoDB\Client);
-$db = $mongoClient->www;
+$db = $mongoClient->perfumefest;
 $search_string = filter_input(INPUT_POST, 'topKeyword', FILTER_SANITIZE_STRING);
 
 // checking if no keywords was stored then will echo back default recommended items 
