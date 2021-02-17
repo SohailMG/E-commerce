@@ -35,26 +35,38 @@ if (URL.match("payment")) {
           let street = document.getElementById("street");
           let city = document.getElementById("city");
           let postcode = document.getElementById("postcode");
-          request.onload = function () {
-               //Check HTTP status code
-               if (request.status === 200) {
-                    showOrderConfirmation(request.responseText);
-               } else console.log("Error communicating with server");
-          };
-          // sending a post request to add product data as a json string
-          request.open("POST", "./order-confirmation.php");
-          request.setRequestHeader(
-               "Content-type",
-               "application/x-www-form-urlencoded"
-          );
-          request.send(
-               "street=" +
-                    street.value +
-                    "&city=" +
-                    city.value +
-                    "&postcode=" +
-                    postcode.value
-          );
+          let errorMsg = document.getElementById('errorMsg');
+
+          let formFields = [street,city,postcode];
+
+          if (street.value == "" || city.value == "" || postcode.value == "") {
+               errorMsg.innerHTML="Fill all fields";
+               formFields.forEach(element => {
+                    element.style.border="1px solid red";
+                    
+               });
+          } else {
+               request.onload = function () {
+                    //Check HTTP status code
+                    if (request.status === 200) {
+                         showOrderConfirmation(request.responseText);
+                    } else console.log("Error communicating with server");
+               };
+               // sending a post request to add product data as a json string
+               request.open("POST", "./order-confirmation.php");
+               request.setRequestHeader(
+                    "Content-type",
+                    "application/x-www-form-urlencoded"
+               );
+               request.send(
+                    "street=" +
+                         street.value +
+                         "&city=" +
+                         city.value +
+                         "&postcode=" +
+                         postcode.value
+               );
+          }
      }
 
      /**
@@ -70,7 +82,7 @@ if (URL.match("payment")) {
           document.getElementById("ordersTotal").innerHTML =
                "Total : £" + localStorage.getItem("cartTotal");
 
-               localStorage.removeItem('cartNames');
+          localStorage.removeItem("cartName");
      }
 }
 /**

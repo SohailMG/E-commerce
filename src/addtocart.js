@@ -34,7 +34,7 @@ function addToCart(event) {
      if (isAddedAlready(itemname)) {
           alertNotAdded(itemMsg);
      } else {
-          alertAdded(itemMsg)
+          alertAdded(itemMsg);
           cart_amount.style.color = "red";
           cart_amount.innerHTML = cart_count++;
           console.log(cart_count);
@@ -87,6 +87,11 @@ function isAddedAlready(itemname) {
      }
 }
 
+/**
+ * displays message for one second when
+ * item has already been added to cart
+ * @param {HTMLElement} itemMsg
+ */
 function alertNotAdded(itemMsg) {
      itemMsg.style.display = "block";
      itemMsg.innerHTML = "Already Added to Cart";
@@ -95,6 +100,11 @@ function alertNotAdded(itemMsg) {
           itemMsg.style.display = "none";
      }, 1000);
 }
+/**
+ * displays message for one second when
+ * item gets added to cart
+ * @param {HTMLElement} itemMsg
+ */
 function alertAdded(itemMsg) {
      itemMsg.style.display = "block";
      itemMsg.innerHTML = "Item added to Cart";

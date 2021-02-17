@@ -25,6 +25,7 @@ outputHeaderNav("Payment");
             Street : <input type="text" name="" id="street">
             City : <input type="text" name="" id="city">
             Postcode: <input type="text" name="" id="postcode">
+            <p id="errorMsg"></p>
         </div>
         <button onclick="storeAddressDetails()">Pay</button>
 
