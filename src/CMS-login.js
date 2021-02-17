@@ -1,5 +1,9 @@
 
-
+/**
+ * This script handles CMS login page functionality
+ * including login verification,logout functionality 
+ * as well as session tracking.
+ */
 let cmsURL = location.href;
 
 let request = new XMLHttpRequest();

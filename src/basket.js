@@ -3,6 +3,7 @@
  * removing an item from the basket as well as
  * displaying and updating the current total of the
  * basket.
+ *
  */
 
 if (URL.match("cart")) {
@@ -29,7 +30,9 @@ if (URL.match("cart")) {
                // updating the current total
                updateCartTotal();
                // updating cart names in localstorage by removing item name
-               var newCartNames = cartNames.filter((value) => value != item_name);
+               var newCartNames = cartNames.filter(
+                    (value) => value != item_name
+               );
                console.log(newCartNames);
                localStorage.setItem("cartName", JSON.stringify(newCartNames));
           });

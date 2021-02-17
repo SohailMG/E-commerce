@@ -99,5 +99,39 @@ function highlight(elm) {
      elm.style.color = "green";
      window.setTimeout(function () {
           elm.style.color = original;
-     }, 1000);
+     }, 2000);
+}
+
+/**
+ * creates a post request with the id being updated and 
+ * populates all item info for each field once user
+ * clicks out of the input filed
+ */
+function showItemInfo() {
+     let updatedId = document.getElementById("update-id");
+     let formName = document.getElementById("update-name");
+     let formPrice = document.getElementById("update-price");
+     let formStock = document.getElementById("update-stock");
+     let formSize = document.getElementById("update-size");
+
+     request.onload = function () {
+          //Check HTTP status code
+          if (request.status === 200) {
+               let itemInfo = JSON.parse(request.responseText);
+
+               // populating all input fileds
+               formName.value = itemInfo.Name;
+               formSize.value = itemInfo.size;
+               formPrice.value = itemInfo.Price;
+               formStock.value = itemInfo.Quantity;
+          } else console.log("Error communicating with server");
+     };
+
+     //Set up and send request
+     request.open("POST", "./CMS/view-productInfo.php");
+     request.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+     );
+     request.send("id=" + updatedId.value);
 }

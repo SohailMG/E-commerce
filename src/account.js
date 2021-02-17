@@ -6,7 +6,7 @@
  */
 let URL = window.location.href;
 
-
+// displaying name of currently logged user
 let custName = localStorage.getItem("custName");
 let accountName = document.getElementById("account-name");
 if (custName == null) {
@@ -18,11 +18,14 @@ if (custName == null) {
   accountName.innerHTML = custName;
 }
 
+// checking if current page is Register.php
 if (URL.match("Register")) {
      window.onload = () => {
+          // checking if customer is logged
           check_customer_logged();
      };
 
+     // storing html elements of sign-in and up forms 
      let switch_signIn = document.getElementById("show-signIn");
      let switch_signUp = document.getElementById("show-signup");
      let signUpform = document.getElementById("sign-up");

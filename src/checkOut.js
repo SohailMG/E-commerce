@@ -35,15 +35,14 @@ if (URL.match("payment")) {
           let street = document.getElementById("street");
           let city = document.getElementById("city");
           let postcode = document.getElementById("postcode");
-          let errorMsg = document.getElementById('errorMsg');
+          let errorMsg = document.getElementById("errorMsg");
 
-          let formFields = [street,city,postcode];
+          let formFields = [street, city, postcode];
 
           if (street.value == "" || city.value == "" || postcode.value == "") {
-               errorMsg.innerHTML="Fill all fields";
-               formFields.forEach(element => {
-                    element.style.border="1px solid red";
-                    
+               errorMsg.innerHTML = "Fill all fields";
+               formFields.forEach((element) => {
+                    element.style.border = "1px solid red";
                });
           } else {
                request.onload = function () {

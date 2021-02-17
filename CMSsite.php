@@ -12,7 +12,7 @@
             </div>
             <!-- main section of CMS page displays different forms -->
             <div class="task-container">
-            <!-- database table displaying all product's table -->
+                <!-- database table displaying all product's table -->
                 <table id="table">
                     <caption>Products Database</caption>
                     <thead>
@@ -56,7 +56,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <!-- quering all customer collections's data -->
+                        <!-- quering all customer collections's data -->
                         <?php
                         //Include libraries
                         require __DIR__ . '/vendor/autoload.php';
@@ -96,7 +96,7 @@
                 <!-- remove product form -->
                 <div id="remove-form">
                     <h1>Remove Order</h1>
-                    Customer ID: <input id="view-id" type="text" >
+                    Customer ID: <input id="view-id" type="text">
                     <button id="remove-product" onclick="viewOrders()">View Orders</button>
                     Order ID: <input id="remove-id" type="text">
                     <button id="remove-product" onclick="remove_item()">Remove</button>
@@ -106,11 +106,11 @@
                 <!-- update product form -->
                 <div id="update-form">
                     <h1>Update Product</h1>
-                    ID: <input id="update-id" type="text" placeholder="0pwis8ue82js9dg33ldis">
+                    ID: <input id="update-id" type="text" onfocusout="showItemInfo()">
                     Name: <input id="update-name" type="text">
-                    Price: <input id="update-price" type="text" placeholder="33.30">
-                    Stock: <input id="update-stock" type="text" placeholder="10">
-                    Size: <input id="update-size" type="text" placeholder="50ml">
+                    Price: <input id="update-price" type="text">
+                    Stock: <input id="update-stock" type="text">
+                    Size: <input id="update-size" type="text">
                     <button id="update-product" onclick="update_item()">Change</button>
                     <p id="update-msg"></p>
                 </div>

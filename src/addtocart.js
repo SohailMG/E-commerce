@@ -1,6 +1,7 @@
 /**
- * retrieving data of added item and posting it's data
- * to a php script to be stored in database
+ * This script handles the functionality of adding 
+ * an item to the cart collectin as well as 
+ * checking if an item is already added
  */
 
 // creating an event listner for the add to cart buttons
@@ -30,10 +31,13 @@ function addToCart(event) {
      let itemSize = shopItem.getElementsByClassName("item-size")[0].innerHTML;
      let itemPrice = shopItem.getElementsByClassName("item-price")[0].innerHTML;
      let itemMsg = shopItem.getElementsByClassName("item-msg")[0];
+
      // checking if item is already added to cart
      if (isAddedAlready(itemname)) {
+          // displays alert on item being added
           alertNotAdded(itemMsg);
      } else {
+          // displays confirmation of item added to cart
           alertAdded(itemMsg);
           cart_amount.style.color = "red";
           cart_amount.innerHTML = cart_count++;
@@ -52,6 +56,7 @@ function addToCart(event) {
                "Content-type",
                "application/x-www-form-urlencoded"
           );
+          // sending cart item details 
           request.send(
                "itemName=" +
                     itemname +
