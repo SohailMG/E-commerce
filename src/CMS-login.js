@@ -26,7 +26,6 @@ if (cmsURL.match("CMS")) {
         sessionStorage.setItem("adminlogged", true);
         localStorage.setItem("adminlogged", true);
       } else {
-        console.log(request.responseText);
         console.log("not logged");
       }
     };
@@ -61,7 +60,7 @@ if (cmsURL.match("CMS")) {
         var responseData = request.responseText;
         //Add data to page
         if (responseData === "ok") {
-          console.log("login successfull");
+          // displaying logout button
           header_wrpr.innerHTML+=logoutStr;
           showCMSPage();
         } else {

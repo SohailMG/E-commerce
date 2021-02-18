@@ -63,6 +63,7 @@
                         $mongoClient = (new MongoDB\Client);
                         $db = $mongoClient->perfumefest;
                         $cursor = $db->Customers->find();
+                        // echoing customer data as a table
                         foreach ($cursor as $product) {
 
                             echo ' <tr>';

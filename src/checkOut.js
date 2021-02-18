@@ -16,10 +16,10 @@ if (URL.match("payment")) {
           //Create event handler that specifies what should happen when server responds
           request.onload = function () {
                if (request.responseText != "not logged") {
-                    console.log(request.responseText);
+                    
                     orderDetails.innerHTML = request.responseText;
                } else {
-                    console.log(request.responseText);
+                    console.log("Not logged");
                }
           };
           //Set up and send request
@@ -92,16 +92,22 @@ if (URL.match("payment")) {
 function gotoPayment() {
      let errorMsg = document.getElementById("checkoutMsg");
      let cartItem = document.getElementsByClassName("order-details")[0];
+     let loginBtn = '<button onclick="goToLogin()">Login</button>';
      if (localStorage.getItem("customerLogged")) {
           if (typeof cartItem != "undefined" && cartItem != null) {
                location.href = "payment.php";
           } else {
                errorMsg.innerHTML = "Add items first";
                errorMsg.style.color = "red";
-               console.log("non exits");
+               
           }
      } else {
           errorMsg.innerHTML = "Must be logged first";
           errorMsg.style.color = "red";
+          errorMsg.innerHTML += loginBtn;
      }
+}
+
+function goToLogin(){
+     location.href="Register.php";
 }

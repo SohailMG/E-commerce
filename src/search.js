@@ -8,6 +8,7 @@ if (URL.match("cart")) {
   let search_box = document.getElementById("search-box");
   let search_btn = document.getElementById("search-btn");
   search_box.placeholder = "Cannot search in cart";
+  search_box.disabled = true;
   search_btn.disabled = true;
 } else {
   function search_item() {
@@ -26,7 +27,7 @@ if (URL.match("cart")) {
     request.onload = function () {
       //Check HTTP status code
       if (request.status === 200) {
-        console.log(request.responseText);
+        
         if (URL.match("perfumes")) {
           for (var i = 0; i < results_box.length; i++) {
             results_box[i].innerHTML = request.responseText;
@@ -65,7 +66,7 @@ if (URL.match("cart")) {
     request.onload = function () {
       //Check HTTP status code
       if (request.status === 200) {
-        console.log(request.responseText);
+        
       } else console.log("Error communicating with server");
     };
 

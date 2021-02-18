@@ -35,14 +35,13 @@ if ($search_string == "") {
         '$text' => ['$search' => $search_string]
     ];
 
-    //Find only 4  products that has seach criteria
+    //Find only 4  products that has search criteria
     $cursor = $db->Products->find($findCriteria, ['limit' => 4]);
 
+    // echoing back all items in a grid
     echo '    <p>Recommended</p>';
     echo '  <div id="suggesteds">';
     foreach ($cursor as $product) {
-
-
         echo ' <div class="perfume-data">';
         echo ' <div class="item-picture"><img class="item-img" src="./' . $product['img_url'] . '" alt=""></div>';
         echo ' <div class="item-name">' . $product['Name'] . '</div>';

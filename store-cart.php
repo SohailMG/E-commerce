@@ -17,7 +17,7 @@ $itemSize  = filter_input(INPUT_POST, 'itemSize', FILTER_SANITIZE_STRING);
 $itemImg   = filter_input(INPUT_POST, 'itemImg', FILTER_SANITIZE_STRING);
 
 // retrieving the customer id of currelty logged customer
-if( array_key_exists("customer", $_SESSION) ){
+if (array_key_exists("customer", $_SESSION)) {
     $customer_id =  $_SESSION["customerID"];
     // array of item data with key status to delete items from cart later 
     $cartData = [
@@ -30,7 +30,7 @@ if( array_key_exists("customer", $_SESSION) ){
     ];
     // storing item data in cart collection
     $cart_collection->insertOne($cartData);
-}else{
+} else {
 
     $cartData = [
         "Name"  => $itemName,
@@ -41,5 +41,4 @@ if( array_key_exists("customer", $_SESSION) ){
     ];
     // storing item data in cart collection
     $cart_collection->insertOne($cartData);
-
 }

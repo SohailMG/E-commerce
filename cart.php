@@ -70,6 +70,7 @@ outputHeaderNav("Cart");
     
     
     ?>
+    <!-- recommened items container  -->
 </div>
 <div class="suggested-items">
 </div>

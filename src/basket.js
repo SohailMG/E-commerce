@@ -33,7 +33,7 @@ if (URL.match("cart")) {
                var newCartNames = cartNames.filter(
                     (value) => value != item_name
                );
-               console.log(newCartNames);
+               
                localStorage.setItem("cartName", JSON.stringify(newCartNames));
           });
      }

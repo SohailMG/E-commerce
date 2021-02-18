@@ -18,7 +18,6 @@ $db = $mongoClient->perfumefest;
 $cursor = $db->Products->find();
 
 //outputting a grid wrapper and a wrapper for all products
-
 echo '<div id="sort-products">
       <div id="sort-options">
       <select id="select-options" size="1" name="pet" onchange="sortItems()">

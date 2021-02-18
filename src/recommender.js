@@ -23,8 +23,6 @@ export class Recommender {
                this.keywords[word].date = new Date().getTime();
           }
 
-          console.log(JSON.stringify(this.keywords));
-
           //Save state of recommender
           this.save();
      }

@@ -15,6 +15,7 @@ outputHeaderNav("Home");
             <button onclick="shopNow()"  id="shopnow">Shop Now</button>
         </div>
         <script>
+        // redirecting customer to shopping page
         function shopNow(){
             document.location="perfumes.php";
         }

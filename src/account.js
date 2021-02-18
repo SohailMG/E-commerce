@@ -10,12 +10,9 @@ let URL = window.location.href;
 let custName = localStorage.getItem("custName");
 let accountName = document.getElementById("account-name");
 if (custName == null) {
-  accountName.innerHTML="Account"
-  console.log(custName);
-  
-}else{
-  
-  accountName.innerHTML = custName;
+     accountName.innerHTML = "Account";
+} else {
+     accountName.innerHTML = custName;
 }
 
 // checking if current page is Register.php
@@ -25,7 +22,7 @@ if (URL.match("Register")) {
           check_customer_logged();
      };
 
-     // storing html elements of sign-in and up forms 
+     // storing html elements of sign-in and up forms
      let switch_signIn = document.getElementById("show-signIn");
      let switch_signUp = document.getElementById("show-signup");
      let signUpform = document.getElementById("sign-up");
@@ -131,45 +128,56 @@ function login_customer() {
      let login_pass = document.getElementById("login-password");
      let account_page = document.getElementById("register-form");
      let error_msg = document.getElementById("error-msg");
+     error_msg.style.color = "red";
 
-     request.onload = function () {
-          //Check HTTP status code
-          if (request.status === 200) {
-               //Get data from server
-               var responseData = request.responseText;
-               //checking if request returns incorrect password
-               if (responseData == "incorrect password") {
-                    error_msg.innerHTML = responseData;
+     let formFields = [login_email, login_pass];
 
-                    return;
-               } else if (responseData == "Email not found") {
-                    error_msg.innerHTML = request.responseText;
+     if (login_email.value == "" || login_pass == "") {
+          formFields.forEach((element) => {
+               element.style.border = "1px solid red";
 
-                    return;
-               } else {
-                    // setting a logged customer key in local storage used to prevent
-                    // checkout without user being logged in
-                    localStorage.setItem("customerLogged", true);
-                    // replacing login form with customer details sent from server
-                    account_page.innerHTML = request.responseText;
-                    let custName = document.getElementById("cust-fname");
-                    localStorage.setItem("custName", custName.value);
-                    document.getElementById("account-name").innerHTML=custName.value;
-                    
-                    console.log(custName);
-               }
-          } else console.log("Error communicating with server");
-     };
+               return;
+          });
+          error_msg.innerHTML = "Fill all fields";
+     } else {
+          request.onload = function () {
+               //Check HTTP status code
+               if (request.status === 200) {
+                    //Get data from server
+                    var responseData = request.responseText;
+                    //checking if request returns incorrect password
+                    if (responseData == "incorrect password") {
+                         error_msg.innerHTML = responseData;
 
-     //Set up and send request
-     request.open("POST", "./sign-in.php");
-     request.setRequestHeader(
-          "Content-type",
-          "application/x-www-form-urlencoded"
-     );
-     request.send(
-          "email=" + login_email.value + "&password=" + login_pass.value
-     );
+                         return;
+                    } else if (responseData == "Email not found") {
+                         error_msg.innerHTML = request.responseText;
+
+                         return;
+                    } else {
+                         // setting a logged customer key in local storage used to prevent
+                         // checkout without user being logged in
+                         localStorage.setItem("customerLogged", true);
+                         // replacing login form with customer details sent from server
+                         account_page.innerHTML = request.responseText;
+                         let custName = document.getElementById("cust-fname");
+                         localStorage.setItem("custName", custName.value);
+                         document.getElementById("account-name").innerHTML =
+                              custName.value;
+                    }
+               } else console.log("Error communicating with server");
+          };
+
+          //Set up and send request
+          request.open("POST", "./sign-in.php");
+          request.setRequestHeader(
+               "Content-type",
+               "application/x-www-form-urlencoded"
+          );
+          request.send(
+               "email=" + login_email.value + "&password=" + login_pass.value
+          );
+     }
 }
 
 /**
@@ -202,7 +210,7 @@ function log_out() {
      request.onload = function () {
           if (request.responseText === "ok") {
                localStorage.removeItem("customerLogged");
-               localStorage.removeItem('custName');
+               localStorage.removeItem("custName");
                document.location = "Register.php";
           }
      };
@@ -233,7 +241,6 @@ function changeDetails() {
      let number = cust_num.value;
 
      if (request.status === 200) {
-          console.log(request.responseText);
           // replacing old details with new details
           account_page.innerHTML = request.responseText;
      } else console.log("Error communicating with server");
@@ -270,10 +277,9 @@ function viewCustOrders() {
           //Check HTTP status code
           if (request.status === 200) {
                //Get data from server
-               console.log(request.responseText);
                account_page.innerHTML = request.responseText;
           } else {
-               console.log("failed");
+               console.log("failed to connect");
           }
      };
      request.open("GET", "./view-orders.php");

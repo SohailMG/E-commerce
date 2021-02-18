@@ -34,6 +34,7 @@ if ($sortOpt == "PriceAsc") {
     foreach ($cursor as $product) {
     
         echo '<div class="perfume-data">';
+        echo ' <h1 class="item-msg"></h1>';
         echo ' <div class="item-picture"><img class="item-img" src="./' . $product['img_url'] . '" alt=""></div>';
         echo ' <div class="item-name">' . $product['Name'] . '</div>';
         echo ' <div class="item-size">' . $product['size'] . '</div>';
@@ -48,6 +49,7 @@ if ($sortOpt == "PriceAsc") {
 foreach ($cursor as $product) {
     
     echo '<div class="perfume-data">';
+    echo ' <h1 class="item-msg"></h1>';
     echo ' <div class="item-picture"><img class="item-img" src="./' . $product['img_url'] . '" alt=""></div>';
     echo ' <div class="item-name">' . $product['Name'] . '</div>';
     echo ' <div class="item-size">' . $product['size'] . '</div>';

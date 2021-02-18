@@ -95,7 +95,7 @@ function add_to_table(new_item) {
 
 /**
  * creates a formData object to store file information by
- * using fetch
+ * using fetch API
  */
 async function uploadFile() {
      let NewProductImage = document.getElementById("addform-Image");
@@ -114,7 +114,6 @@ async function uploadFile() {
                // setting the value of image url fields to the file path to the image
           })
           .then(function (text) {
-               console.log(text);
                NewProductImage.value = "Images/" + text;
           });
      document.getElementById("errorMsg").innerText =

@@ -33,7 +33,7 @@ if (!URL.match(/payment|perfumes|Register/)) {
     request.onload = function () {
       //Check HTTP status code
       if (request.status === 200) {
-        // console.log(request.responseText);
+        
         if (URL.match('cart')) {
 
         suggestedBox.innerHTML = request.responseText;

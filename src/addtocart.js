@@ -41,14 +41,6 @@ function addToCart(event) {
           alertAdded(itemMsg);
           cart_amount.style.color = "red";
           cart_amount.innerHTML = cart_count++;
-          console.log(cart_count);
-
-          // Create event handler that specifies what should happen when server responds
-          request.onload = function () {
-               //Check HTTP status code
-               if (request.status === 200) {
-               } else console.log("Error communicating with server");
-          };
 
           //Set up and send request
           request.open("POST", "./store-cart.php");
