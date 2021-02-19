@@ -13,15 +13,16 @@ function sortItems() {
      let selectOpt = document.getElementById("select-options");
      let productsContainer = document.getElementsByClassName("gridwrapper")[0];
 
+     // checking if sort option set to
      if (selectOpt.value == "noSort") {
           return;
      } else {
+          // checking for http status and replacing the main content with the sorted content
           if (request.status === 200) {
                productsContainer.innerHTML = request.responseText;
           } else {
                console.log("connection failed");
           }
-
           request.open("POST", "./sort-items.php");
           request.setRequestHeader(
                "Content-type",
@@ -29,7 +30,7 @@ function sortItems() {
           );
           request.send("sortBy=" + selectOpt.value);
 
-          //ADD EVENT LISTNEERS FOR BUTTRONS
+          //ADD EVENT LISTNEERS FOR ADD TO CART BUTTRONS
           let addToCart_btns = document.getElementsByClassName("addbtn");
 
           for (let i = 0; i < addToCart_btns.length; i++) {

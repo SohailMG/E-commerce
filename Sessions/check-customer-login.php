@@ -5,17 +5,17 @@
     //Include libraries
 require __DIR__ . '/vendor/autoload.php';
 
-//Create instance of MongoDB client
+//Creating instance of MongoDB client
 $mongoClient = (new MongoDB\Client);
-
-//Select a database
+//Selecting a database collection of customers
 $customers = $mongoClient->perfumefest->Customers;
-    
+
+    // checking if a customer session is active, then outputting customer's info
     if( array_key_exists("customer", $_SESSION) ){
         $customer_id =  $_SESSION["customerID"];
 
         $customer = $customers->findOne(['_id' => new MongoDB\BSON\ObjectID($customer_id)]);
-
+        // account details container
         echo ' <div id="account-container">';
         echo ' <h1>Account Details</h1>';
         echo ' first Name: <input id="cust-fname" type="text" name="name" value="' . $customer['firstname'] . '">';

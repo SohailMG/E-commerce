@@ -42,8 +42,6 @@ if ($sortOpt == "PriceAsc") {
         echo ' <button class="addbtn" >Add to Cart</button>
                   </div>';
     }
-
-
 }
 // echoing back sorted results depending on posted value
 foreach ($cursor as $product) {

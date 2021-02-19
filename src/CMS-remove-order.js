@@ -88,14 +88,12 @@ function deletOrder() {
  */
 function viewCustomers() {
      let customerstable = document.getElementById("customers-table");
-
      request.onload = function () {
           //Check HTTP status code
           if (request.status === 200) {
                customerstable.innerHTML = request.responseText;
           } else console.log("Error communicating with server");
      };
-
      //Set up and send request
      request.open("GET", "./CMS/view-customers.php");
      request.send();

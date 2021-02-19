@@ -25,7 +25,6 @@
             "cust_id" => $customer_id,
         ];
 
-
         $customer_basket = $cart_collection->find($findCriteria);
 
         // echoing order confirmation content

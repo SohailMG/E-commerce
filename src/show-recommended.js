@@ -10,19 +10,15 @@ because search() is not visible outside the module. */
 if (!URL.match(/payment|perfumes|Register/)) {
   document.getElementById("search-btn").onclick = search;
   window.onload = showRecommendation;
-  
-
   //Searches for products in database
   function search() {
     //Extract the search text
     let searchText = document.getElementById("search-box").value;
-
     //Add the search keyword to the recommender
     recommender.addKeyword(searchText);
     showRecommendation();
     search_item();
   }
-
   /**
    * sends a post request of the most frequent word 
    * and replaces innerHTML of recommended with all

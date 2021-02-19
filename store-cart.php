@@ -9,7 +9,6 @@ $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->perfumefest;
 $cart_collection = $db->cart;
 
-
 // extracting data of newly added cart item
 $itemName  = filter_input(INPUT_POST, 'itemName', FILTER_SANITIZE_STRING);
 $itemPrice = filter_input(INPUT_POST, 'itemPrice', FILTER_SANITIZE_STRING);

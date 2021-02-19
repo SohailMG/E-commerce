@@ -16,7 +16,6 @@ $db = $mongoClient->perfumefest;
 
 // creating a cursor of all product's data
 $cursor = $db->Products->find();
-
 //outputting a grid wrapper and a wrapper for all products
 echo '<div id="sort-products">
       <div id="sort-options">
@@ -47,7 +46,6 @@ echo '</div>
 </div>';
 
 ?>
-
 <?php
 outputFooter();
 ?>

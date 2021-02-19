@@ -26,7 +26,6 @@ export class Recommender {
           //Save state of recommender
           this.save();
      }
-
      //Returns the most popular keyword
      getTopKeyword() {
           //Clean up old keywords

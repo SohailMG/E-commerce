@@ -14,7 +14,6 @@ $db = $mongoClient->perfumefest;
 $customer_email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 $customer_pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-
 $customer_data = $db->Customers;
 // finding customer matching given email address
 $find_customer = $customer_data->find(array('email' => $customer_email));

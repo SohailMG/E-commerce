@@ -32,12 +32,8 @@ outputHeaderNav("Register");
             <button id="signinBtn" onclick="login_customer()">Login</button>
         </div>
     </div>
-
     </div>
-
 </main>
-
-
 <?php
 outputFooter();
 ?>

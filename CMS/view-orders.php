@@ -10,9 +10,6 @@ $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->perfumefest;
 
 //Extract ID from POST data
-
-
-
 $item_id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
 
 $item = $db->orders->find(['cust_id' => new MongoDB\BSON\ObjectID($item_id)]);

@@ -15,8 +15,7 @@ if (URL.match("payment")) {
 
           //Create event handler that specifies what should happen when server responds
           request.onload = function () {
-               if (request.responseText != "not logged") {
-                    
+               if (request.responseText != "not logged") {     
                     orderDetails.innerHTML = request.responseText;
                } else {
                     console.log("Not logged");
@@ -103,6 +102,7 @@ function gotoPayment() {
           }
      } else {
           errorMsg.innerHTML = "Must be logged first";
+          localStorage.removeItem('cartName');
           errorMsg.style.color = "red";
           errorMsg.innerHTML += loginBtn;
      }

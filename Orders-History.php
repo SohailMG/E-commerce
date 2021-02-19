@@ -10,10 +10,7 @@
     $db = $mongoClient->perfumefest;
     $cart_collection = $db->cart;
     $orders_collection = $db->orders;
-
-
-
-
+    // checking if a customer session is active
     if (array_key_exists("customer", $_SESSION)) {
         $customer_id =  $_SESSION["customerID"];
 
@@ -24,10 +21,10 @@
         // quering all order's in orders collection that have same custmomer id
         $customerOrders = $orders_collection->find($findCriteria);
 
-
         echo ' <div id="orders-container">';
         echo ' <h1>Order History...</h1>';
         foreach ($customerOrders as $item) {
+            // storing details of all products with same customer id
             $order_name = $item['Name'];
             $order_Price = $item['Price'];
             $order_Size = $item['Size'];

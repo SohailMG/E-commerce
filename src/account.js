@@ -282,7 +282,7 @@ function viewCustOrders() {
                console.log("failed to connect");
           }
      };
-     request.open("GET", "./view-orders.php");
+     request.open("GET", "./Orders-History.php");
      request.send();
 }
 // returns from order screen to account details
